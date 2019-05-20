@@ -1,0 +1,16 @@
+PODS:
+  - JZCalendarWeekView (0.6.3)
+
+DEPENDENCIES:
+  - JZCalendarWeekView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JZCalendarWeekView
+
+SPEC CHECKSUMS:
+  JZCalendarWeekView: 17debe4773c5fb790fca66a25f4cde69ceba419d
+
+PODFILE CHECKSUM: 512bb1f842f778b260349dfce38ca9b562ad2dbf
+
+COCOAPODS: 1.6.2
