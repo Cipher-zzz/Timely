@@ -14,8 +14,13 @@ class TimetableViewController: UIViewController {
     @IBOutlet weak var calendarWeekView: JZLongPressWeekView!
     let viewModel = ViewModel()
     
+    weak var databaseController: DatabaseProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        databaseController = appDelegate.databaseController
         
         setupCalendarView()
     }
@@ -71,14 +76,8 @@ extension TimetableViewController: JZBaseViewDelegate {
 extension TimetableViewController: JZLongPressViewDelegate, JZLongPressViewDataSource {
     
     func weekView(_ weekView: JZLongPressWeekView, didEndAddNewLongPressAt startDate: Date) {
-        let newEvent = AllDayEvent(id: UUID().uuidString, title: "New Event", startDate: startDate, endDate: startDate.add(component: .hour, value: weekView.addNewDurationMins/60),
-                                   location: "Melbourne", isAllDay: false)
-        
-        if viewModel.eventsByDate[startDate.startOfDay] == nil {
-            viewModel.eventsByDate[startDate.startOfDay] = [AllDayEvent]()
-        }
-        viewModel.events.append(newEvent)
-        viewModel.eventsByDate = JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events)
+        //let _ = databaseController!.addTask(newTaskTitle: "newTask", newTaskDescription: "Null", newTaskDueDate: startDate.add(component: .hour, value: weekView.addNewDurationMins/60), newTaskStartDate: startDate, newTaskAddress: "Null", newTaskRepeat: false, newTaskHasBeenCompleted: false)
+        // TODO: add event
         weekView.forceReload(reloadEvents: viewModel.eventsByDate)
     }
     

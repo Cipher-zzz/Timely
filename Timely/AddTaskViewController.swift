@@ -73,11 +73,11 @@ class AddTaskViewController: UIViewController {
                 
                 if taskHasBeenCompletedSegmentedControl.selectedSegmentIndex == 0{
                     // Which means that user select incomplete in the segmented control
-                    databaseController!.updateTask(newTask: task!, newTaskTitle: taskTitle, newTaskDescription: taskDescription, newTaskDueDate: taskDueDate!, newTaskStartDate: taskStartDate!, newTaskAddress: taskAddress, newTaskRepeat: false, newTaskHasBeenCompleted: false)
+                    databaseController!.updateTask(settingTask: task!, newTaskTitle: taskTitle, newTaskDescription: taskDescription, newTaskDueDate: taskDueDate!, newTaskStartDate: taskStartDate!, newTaskAddress: taskAddress, newTaskRepeat: false, newTaskHasBeenCompleted: false)
                 }
                 else{
                     // Which means that user select complete in the segmented control
-                    databaseController!.updateTask(newTask: task!, newTaskTitle: taskTitle, newTaskDescription: taskDescription, newTaskDueDate: taskDueDate!, newTaskStartDate: taskStartDate!, newTaskAddress: taskAddress, newTaskRepeat: false, newTaskHasBeenCompleted: true)
+                    databaseController!.updateTask(settingTask: task!, newTaskTitle: taskTitle, newTaskDescription: taskDescription, newTaskDueDate: taskDueDate!, newTaskStartDate: taskStartDate!, newTaskAddress: taskAddress, newTaskRepeat: false, newTaskHasBeenCompleted: true)
                 }
                 // feedback of adding
                 displayMessage(title: "Success", message: "Task has been update!", pop: true)

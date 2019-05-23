@@ -8,7 +8,7 @@
 
 import Foundation
 class VolumeData: NSObject, Decodable {
-    var units: UnitData?
+    var units: [String: UnitData]?
     private enum CodingKeys: String, CodingKey {
         case units = "allocated"
     }
@@ -23,7 +23,8 @@ class UnitData: NSObject, Decodable {
     var startTime: String?
     var startDate: String?
     var duration: String?
-    
+    var weekPattern: String
+    var dayOfWeek: String
 //    private enum RootKeys: String, CodingKey {
 //        case volumeInfo
 //    }
@@ -36,6 +37,8 @@ class UnitData: NSObject, Decodable {
         case startTime = "start_time"
         case startDate = "start_date"
         case duration
+        case weekPattern = "week_pattern"
+        case dayOfWeek = "day_of_week"
     }
     
     required init(from decoder: Decoder) throws {
@@ -51,6 +54,9 @@ class UnitData: NSObject, Decodable {
         self.startTime = try unitContainer.decode(String.self, forKey: .startTime)
         self.startDate = try unitContainer.decode(String.self, forKey: .startDate)
         self.duration = try unitContainer.decode(String.self, forKey: .duration)
+        self.weekPattern = try unitContainer.decode(String.self, forKey: .weekPattern)
+        self.dayOfWeek = try unitContainer.decode(String.self, forKey: .dayOfWeek)
+
         
     }
 }

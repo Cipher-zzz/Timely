@@ -21,23 +21,22 @@ enum ListenerType {
 
 protocol DatabaseListener: AnyObject {
     var listenerType: ListenerType {get set}
-    //func onTeamChange(change: DatabaseChange, teamHeroes: [SuperHero])
     func taskListChange(change: DatabaseChange, tasks: [Task])
 }
 
 protocol DatabaseProtocol: AnyObject {
-    //var defaultTeam: Team {get}
     
     func addTask(newTaskTitle: String, newTaskDescription: String, newTaskDueDate: Date, newTaskStartDate: Date, newTaskAddress: String, newTaskRepeat: Bool, newTaskHasBeenCompleted: Bool) -> Task
-    //func addTeam(teamName: String) -> Team
-    //func addHeroToTeam(hero: SuperHero, team: Team) -> Bool
+
     func deleteTask(task: Task)
-    //func deleteTeam(team: Team)
-    //func removeHeroFromTeam(hero: SuperHero, team: Team)
+    
     func addListener(listener: DatabaseListener)
+    
     func removeListener(listener: DatabaseListener)
     
-    func updateTask(newTask:Task, newTaskTitle: String, newTaskDescription: String, newTaskDueDate: Date, newTaskStartDate: Date, newTaskAddress: String, newTaskRepeat: Bool, newTaskHasBeenCompleted: Bool)
+    func updateTask(settingTask:Task, newTaskTitle: String, newTaskDescription: String, newTaskDueDate: Date, newTaskStartDate: Date, newTaskAddress: String, newTaskRepeat: Bool, newTaskHasBeenCompleted: Bool)
+    
+    func setTaskDate(settingTask:Task, newTaskDueDate: Date, newTaskStartDate: Date)
     
     func setTaskState(newTask:Task,newTaskHasBeenCompleted:Bool) 
 }

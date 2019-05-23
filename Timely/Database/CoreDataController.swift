@@ -17,6 +17,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     // Results
     var taskslistFetchedResultsController: NSFetchedResultsController<Task>?
     var completedtaskslistFetchedResultsController: NSFetchedResultsController<Task>?
+    var findTaskController: NSFetchedResultsController<Task>?
     
     override init() {
         persistantContainer = NSPersistentContainer(name: "Tasks")
@@ -61,17 +62,27 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     }
     
     // Updating a Task
-    func updateTask(newTask:Task, newTaskTitle: String, newTaskDescription: String, newTaskDueDate: Date, newTaskStartDate: Date, newTaskAddress: String, newTaskRepeat: Bool, newTaskHasBeenCompleted: Bool) {
+    func updateTask(settingTask:Task, newTaskTitle: String, newTaskDescription: String, newTaskDueDate: Date, newTaskStartDate: Date, newTaskAddress: String, newTaskRepeat: Bool, newTaskHasBeenCompleted: Bool) {
         let myDate: NSDate = newTaskDueDate as NSDate
         let myDate2: NSDate = newTaskStartDate as NSDate
-        newTask.setValue(newTaskTitle, forKey: "taskTitle")
-        newTask.setValue(newTaskDescription, forKey: "taskDescription")
-        newTask.setValue(myDate, forKey: "taskDueDate")
-        newTask.setValue(newTaskRepeat, forKey: "taskRepeat")
-        newTask.setValue(newTaskAddress, forKey: "taskAddress")
-        newTask.setValue(myDate2, forKey: "taskStartDate")
-        newTask.setValue(newTaskHasBeenCompleted, forKey: "taskHasBeenCompleted")
+        settingTask.setValue(newTaskTitle, forKey: "taskTitle")
+        settingTask.setValue(newTaskDescription, forKey: "taskDescription")
+        settingTask.setValue(myDate, forKey: "taskDueDate")
+        settingTask.setValue(newTaskRepeat, forKey: "taskRepeat")
+        settingTask.setValue(newTaskAddress, forKey: "taskAddress")
+        settingTask.setValue(myDate2, forKey: "taskStartDate")
+        settingTask.setValue(newTaskHasBeenCompleted, forKey: "taskHasBeenCompleted")
 
+        saveContext()
+    }
+    
+    // Setting Date
+    func setTaskDate(settingTask:Task, newTaskDueDate: Date, newTaskStartDate: Date){
+        let myDate: NSDate = newTaskDueDate as NSDate
+        let myDate2: NSDate = newTaskStartDate as NSDate
+        settingTask.setValue(myDate, forKey: "taskDueDate")
+        settingTask.setValue(myDate2, forKey: "taskStartDate")
+        
         saveContext()
     }
     
@@ -153,6 +164,32 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
             tasks = (completedtaskslistFetchedResultsController?.fetchedObjects)!
         }
         return tasks
+    }
+    
+    // Find the specific task by the task title and its due date/ start date
+    func findTask(newTaskTitle: String, newTaskDueDate: Date, newTaskStartDate: Date) -> Task {
+        let myDate: NSDate = newTaskDueDate as NSDate
+        let myDate2: NSDate = newTaskStartDate as NSDate
+        if completedtaskslistFetchedResultsController == nil {
+            let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+            let nameSortDescriptor = NSSortDescriptor(key: "taskDueDate", ascending: true); fetchRequest.sortDescriptors = [nameSortDescriptor]
+            
+            let predicate = NSPredicate(format: "taskTitle==\(newTaskTitle) && taskDueDate==\(myDate) && taskStartDate==\(myDate2)", "Task")
+            fetchRequest.predicate = predicate
+            
+            completedtaskslistFetchedResultsController = NSFetchedResultsController<Task>(fetchRequest: fetchRequest,managedObjectContext: persistantContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+            completedtaskslistFetchedResultsController?.delegate = self
+            do {
+                try completedtaskslistFetchedResultsController?.performFetch()
+            } catch {
+                print("Fetch Request failed: \(error)")
+            }
+        }
+        var tasks = [Task]()
+        if completedtaskslistFetchedResultsController?.fetchedObjects != nil {
+            tasks = (completedtaskslistFetchedResultsController?.fetchedObjects)!
+        }
+        return tasks[0]
     }
     
     // MARK: - Fetched Results Conttroller Delegate

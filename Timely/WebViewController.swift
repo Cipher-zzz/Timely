@@ -9,13 +9,15 @@
 // https://developer.apple.com/documentation/webkit/wkwebview
 // https://www.hackingwithswift.com/articles/112/the-ultimate-guide-to-wkwebview
 // https://developer.apple.com/documentation/foundation/nsdictionary
+// String iteratation: https://medium.com/@nikhilpatil/loop-string-characters-with-index-in-swift-4-0-cc050c88af5f
 
 import UIKit
 import WebKit
 
 class WebViewController: UIViewController, WKUIDelegate {
-    var user_inf = [UnitData]()
+    var user_inf : [String: UnitData] = [:]
     var webView: WKWebView!
+    weak var databaseController: DatabaseProtocol?
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
@@ -25,6 +27,9 @@ class WebViewController: UIViewController, WKUIDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        databaseController = appDelegate.databaseController
         
         // let myURL = URL(string:"https://monashuni.okta.com/app/monashuniversity_allocateplus_1/exk1lqfohscjojl1p2p7/sso/saml")
         let myURL = URL(string:"https://my-timetable.monash.edu/odd/student?ss=503350ab070d40fea4fe311f690e7e39")
@@ -38,10 +43,47 @@ class WebViewController: UIViewController, WKUIDelegate {
             if let data = data as? String {
                 do {
                     let decoder = JSONDecoder()
-                    print(data)
+                    //print(data)
                     let volumeData = try decoder.decode(VolumeData.self, from: data.data(using: .utf8)!)
-                    self.user_inf = [volumeData.units!]
-                    print(self.user_inf)
+                    self.user_inf = volumeData.units!
+                    
+                    
+                    for item in self.user_inf{
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+
+                        
+                        var currentStartDate = dateFormatter.date(from: "\(item.value.startDate!) \(item.value.startTime!)")
+                        var currentEndDate = currentStartDate?.add(component: .minute, value: Int(item.value.duration!)!)
+                        let currentDayOfWeek =  item.value.dayOfWeek
+                        
+                        if currentDayOfWeek == "Tue"{
+                            currentStartDate = currentStartDate!.add(component: .day, value: 1)
+                            currentEndDate = currentEndDate!.add(component: .day, value: 1)
+                        }
+                        else if currentDayOfWeek == "Wed"{
+                            currentStartDate = currentStartDate!.add(component: .day, value: 2)
+                            currentEndDate = currentEndDate!.add(component: .day, value: 2)
+                        }
+                        else if currentDayOfWeek == "Thu"{
+                            currentStartDate = currentStartDate!.add(component: .day, value: 3)
+                            currentEndDate = currentEndDate!.add(component: .day, value: 3)
+                        }
+                        else if currentDayOfWeek == "Fri"{
+                            currentStartDate = currentStartDate!.add(component: .day, value: 4)
+                            currentEndDate = currentEndDate!.add(component: .day, value: 4)
+                        }
+                        
+                        let currentWeekPattern = item.value.weekPattern
+                        for i in 0..<currentWeekPattern.count {
+                            let index = currentWeekPattern.index(currentWeekPattern.startIndex, offsetBy: i)
+                            if currentWeekPattern[index] == "1"{
+                                let _ = self.databaseController?.addTask(newTaskTitle: item.key, newTaskDescription: "Unit: \(item.value.subjectTitle!) Staff is \(item.value.staff!)", newTaskDueDate: currentEndDate!, newTaskStartDate: currentStartDate!, newTaskAddress: item.value.location!, newTaskRepeat: false, newTaskHasBeenCompleted: false)
+                            }
+                            currentStartDate = currentStartDate!.add(component: .day, value: 7)
+                            currentEndDate = currentEndDate!.add(component: .day, value: 7)
+                        }
+                    }
                 } catch let error {
                     //self.webView.reload()
                     //self.webView.goBack()

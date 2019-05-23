@@ -81,7 +81,7 @@ class CompletedTaskListTableViewController: UITableViewController,DatabaseListen
             let listCell = tableView.dequeueReusableCell(withIdentifier: CELL_LIST) as! TaskTableViewCell
             
             let task = filtedTasks[indexPath.row]
-            listCell.dueDateLabel.text = dateFormatter.string(from: task.taskDueDate! as Date)
+            listCell.dueDateLabel.text = dateFormatter.string(from: task.taskStartDate! as Date)
             
             let taskDate = task.taskDueDate! as Date
             
