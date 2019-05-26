@@ -166,32 +166,6 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         return tasks
     }
     
-    // Find the specific task by the task title and its due date/ start date
-    func findTask(newTaskTitle: String, newTaskDueDate: Date, newTaskStartDate: Date) -> Task {
-        let myDate: NSDate = newTaskDueDate as NSDate
-        let myDate2: NSDate = newTaskStartDate as NSDate
-        if completedtaskslistFetchedResultsController == nil {
-            let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-            let nameSortDescriptor = NSSortDescriptor(key: "taskDueDate", ascending: true); fetchRequest.sortDescriptors = [nameSortDescriptor]
-            
-            let predicate = NSPredicate(format: "taskTitle==\(newTaskTitle) && taskDueDate==\(myDate) && taskStartDate==\(myDate2)", "Task")
-            fetchRequest.predicate = predicate
-            
-            completedtaskslistFetchedResultsController = NSFetchedResultsController<Task>(fetchRequest: fetchRequest,managedObjectContext: persistantContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-            completedtaskslistFetchedResultsController?.delegate = self
-            do {
-                try completedtaskslistFetchedResultsController?.performFetch()
-            } catch {
-                print("Fetch Request failed: \(error)")
-            }
-        }
-        var tasks = [Task]()
-        if completedtaskslistFetchedResultsController?.fetchedObjects != nil {
-            tasks = (completedtaskslistFetchedResultsController?.fetchedObjects)!
-        }
-        return tasks[0]
-    }
-    
     // MARK: - Fetched Results Conttroller Delegate
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

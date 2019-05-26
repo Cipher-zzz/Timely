@@ -1,7 +1,7 @@
 //
 //  TimetableViewController.swift
 //  Timely
-//
+//  Copy from framework by Jeff Zhang on 3/4/18.
 //  Created by 张泽正 on 2019/5/4.
 //  Copyright © 2019 monash. All rights reserved.
 //
@@ -9,7 +9,15 @@
 import UIKit
 import JZCalendarWeekView
 
-class TimetableViewController: UIViewController {
+class TimetableViewController: UIViewController, DatabaseListener {
+    // TODO: reload the view when back from tasks list
+    var listenerType = ListenerType.tasks
+    
+    func taskListChange(change: DatabaseChange, tasks: [Task]) {
+        viewModel.events = viewModel.eventGenerater(taskList: tasks)
+        viewModel.tasks = tasks
+    }
+    
     
     @IBOutlet weak var calendarWeekView: JZLongPressWeekView!
     let viewModel = ViewModel()
@@ -32,6 +40,7 @@ class TimetableViewController: UIViewController {
     
     private func setupCalendarView() {
         calendarWeekView.baseDelegate = self
+        databaseController?.addListener(listener: self)
         
         if viewModel.currentSelectedData != nil {
             // For example only
@@ -77,19 +86,19 @@ extension TimetableViewController: JZLongPressViewDelegate, JZLongPressViewDataS
     
     func weekView(_ weekView: JZLongPressWeekView, didEndAddNewLongPressAt startDate: Date) {
         let _ = databaseController!.addTask(newTaskTitle: "newTask", newTaskDescription: "Null", newTaskDueDate: startDate.add(component: .hour, value: weekView.addNewDurationMins/60), newTaskStartDate: startDate, newTaskAddress: "Null", newTaskRepeat: false, newTaskHasBeenCompleted: false)
-        weekView.forceReload(reloadEvents: viewModel.eventsByDate)
+        weekView.forceReload(reloadEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events))
     }
     
     func weekView(_ weekView: JZLongPressWeekView, editingEvent: JZBaseEvent, didEndMoveLongPressAt startDate: Date) {
         let event = editingEvent as! AllDayEvent
         let duration = Calendar.current.dateComponents([.minute], from: event.startDate, to: event.endDate).minute!
         let selectedIndex = viewModel.events.index(where: { $0.id == event.id })!
-        let currentTask = databaseController!.findTask(newTaskTitle: viewModel.events[selectedIndex].title, newTaskDueDate: viewModel.events[selectedIndex].startDate, newTaskStartDate: viewModel.events[selectedIndex].endDate)
+        let currentTask = viewModel.tasks[selectedIndex]
         //viewModel.events[selectedIndex].startDate = startDate
         //viewModel.events[selectedIndex].endDate = startDate.add(component: .minute, value: duration)
         databaseController!.setTaskDate(settingTask: currentTask, newTaskDueDate: startDate.add(component: .minute, value: duration), newTaskStartDate: startDate)
         viewModel.eventsByDate = JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events)
-        weekView.forceReload(reloadEvents: viewModel.eventsByDate)
+        weekView.forceReload(reloadEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events))
     }
     
     func weekView(_ weekView: JZLongPressWeekView, viewForAddNewLongPressAt startDate: Date) -> UIView {

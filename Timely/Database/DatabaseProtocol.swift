@@ -37,9 +37,7 @@ protocol DatabaseProtocol: AnyObject {
     func updateTask(settingTask:Task, newTaskTitle: String, newTaskDescription: String, newTaskDueDate: Date, newTaskStartDate: Date, newTaskAddress: String, newTaskRepeat: Bool, newTaskHasBeenCompleted: Bool)
     
     func setTaskDate(settingTask:Task, newTaskDueDate: Date, newTaskStartDate: Date)
-    
-    func findTask(newTaskTitle: String, newTaskDueDate: Date, newTaskStartDate: Date) -> Task
-    
+        
     func setTaskState(newTask:Task,newTaskHasBeenCompleted:Bool) 
 }
 

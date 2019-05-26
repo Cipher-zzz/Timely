@@ -10,16 +10,8 @@ import Foundation
 
 import JZCalendarWeekView
 
-class ViewModel: NSObject, DatabaseListener{
+class ViewModel: NSObject{
     
-    var listenerType = ListenerType.tasks
-    
-    func taskListChange(change: DatabaseChange, tasks: [Task]) {
-        self.events = eventGenerater(taskList: tasks)
-    }
-    
-    
-   
     /*
     AllDayEvent(id: "4", title: "AllDay1", startDate: firstDate.startOfDay, endDate: firstDate.startOfDay, location: "Gold Coast", isAllDay: true),
     AllDayEvent(id: "5", title: "AllDay2", startDate: firstDate.startOfDay, endDate: firstDate.startOfDay, location: "Adelaide", isAllDay: true),
@@ -27,6 +19,7 @@ class ViewModel: NSObject, DatabaseListener{
     AllDayEvent(id: "7", title: "AllDay4", startDate: thirdDate.startOfDay, endDate: thirdDate.startOfDay, location: "Brisbane", isAllDay: true)*/
     
     var events = [AllDayEvent(id: "0", title: "One", startDate: Date(), endDate: Date().add(component: .hour, value: 1), location: "Melbourne", isAllDay: false)]
+    var tasks: [Task] = []
     
     lazy var eventsByDate = JZWeekViewHelper.getIntraEventsByDate(originalEvents: events)
     
@@ -37,7 +30,7 @@ class ViewModel: NSObject, DatabaseListener{
         for task in taskList{
             events.append(AllDayEvent(id: UUID().uuidString, title: task.taskTitle!, startDate: task.taskStartDate! as Date, endDate: task.taskDueDate! as Date, location: task.taskAddress!, isAllDay: false))
         }
-        print(events)
+        print("events list has been added")
         return events
     }
 }

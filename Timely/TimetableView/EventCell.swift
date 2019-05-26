@@ -1,7 +1,7 @@
 //
 //  EventCell.swift
 //  Timely
-//
+//  Copy from framework by Jeff Zhang on 3/4/18.
 //  Created by 张泽正 on 2019/5/18.
 //  Copyright © 2019 monash. All rights reserved.
 //

@@ -157,7 +157,6 @@
 		DE2FAFD02240C5E6002C6A05 /* Timely */ = {
 			isa = PBXGroup;
 			children = (
-				DE1C4AED229A9DB700FC7439 /* Icon */,
 				DEB320D322634E0C00CAE9C6 /* Database */,
 				DE12721022631BE10010B7AB /* DataModel */,
 				DE2FAFD52240C5E6002C6A05 /* Main.storyboard */,
@@ -175,6 +174,7 @@
 				DE99229A227E7DCA000760EF /* TaskMapViewController.swift */,
 				DE992293227D51F1000760EF /* WebViewController.swift */,
 				DE1D9959228417BE000DC0AC /* VolumeData.swift */,
+				DE1C4AED229A9DB700FC7439 /* Icon */,
 			);
 			path = Timely;
 			sourceTree = "<group>";
