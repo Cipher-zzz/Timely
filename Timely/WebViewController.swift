@@ -35,6 +35,7 @@ class WebViewController: UIViewController, WKUIDelegate {
         let myURL = URL(string:"https://my-timetable.monash.edu/odd/student?ss=503350ab070d40fea4fe311f690e7e39")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
+        displayMessage(title: "Instruction", message: "Please login in your monash account first, after you see the allocate+ page, click sync button", pop: false)
         
     }
     
@@ -84,16 +85,40 @@ class WebViewController: UIViewController, WKUIDelegate {
                             currentEndDate = currentEndDate!.add(component: .day, value: 7)
                         }
                     }
+                    self.displayMessage(title: "Success", message: "your courses have been added successfully", pop: true)
                 } catch let error {
                     //self.webView.reload()
                     //self.webView.goBack()
                     print("JSONDecoderError:\(error)")
+                    self.displayMessage(title: "Error", message: "Sorry about that, Monash has updated the allocate plus system. I will fix it as soon as possiable", pop: true)
                 }
             }
             else {
                 print("evaluateJavaScriptError")
+                self.displayMessage(title: "Error", message: "Please try again, only click the sync button when you login in successfully and it shows allocate+ page", pop: false)
             }
         }
+    }
+    
+    func popHandler(alert: UIAlertAction!) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func displayMessage(title: String, message: String, pop: Bool) {
+        // Setup an alert to show user details about the Person
+        let alertController = UIAlertController(title: title, message: message,preferredStyle: UIAlertController.Style.alert)
+        
+        // If use input correctly, the feedback will lead to the page before,
+        // else if user get an error, it should stay in current page.
+        // Writing handler for UIAlertAction: https://stackoverflow.com/questions/24190277/writing-handler-for-uialertaction
+        
+        if pop{
+            alertController.addAction(UIAlertAction(title: "Dismiss", style:UIAlertAction.Style.default,handler: popHandler))
+        }
+        else{
+            alertController.addAction(UIAlertAction(title: "Dismiss", style:UIAlertAction.Style.default,handler: nil))
+        }
+        self.present(alertController, animated: true, completion: nil)
     }
     
     /*
