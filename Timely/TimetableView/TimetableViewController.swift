@@ -76,8 +76,7 @@ extension TimetableViewController: JZBaseViewDelegate {
 extension TimetableViewController: JZLongPressViewDelegate, JZLongPressViewDataSource {
     
     func weekView(_ weekView: JZLongPressWeekView, didEndAddNewLongPressAt startDate: Date) {
-        //let _ = databaseController!.addTask(newTaskTitle: "newTask", newTaskDescription: "Null", newTaskDueDate: startDate.add(component: .hour, value: weekView.addNewDurationMins/60), newTaskStartDate: startDate, newTaskAddress: "Null", newTaskRepeat: false, newTaskHasBeenCompleted: false)
-        // TODO: add event
+        let _ = databaseController!.addTask(newTaskTitle: "newTask", newTaskDescription: "Null", newTaskDueDate: startDate.add(component: .hour, value: weekView.addNewDurationMins/60), newTaskStartDate: startDate, newTaskAddress: "Null", newTaskRepeat: false, newTaskHasBeenCompleted: false)
         weekView.forceReload(reloadEvents: viewModel.eventsByDate)
     }
     
@@ -85,9 +84,10 @@ extension TimetableViewController: JZLongPressViewDelegate, JZLongPressViewDataS
         let event = editingEvent as! AllDayEvent
         let duration = Calendar.current.dateComponents([.minute], from: event.startDate, to: event.endDate).minute!
         let selectedIndex = viewModel.events.index(where: { $0.id == event.id })!
-        viewModel.events[selectedIndex].startDate = startDate
-        viewModel.events[selectedIndex].endDate = startDate.add(component: .minute, value: duration)
-        
+        let currentTask = databaseController!.findTask(newTaskTitle: viewModel.events[selectedIndex].title, newTaskDueDate: viewModel.events[selectedIndex].startDate, newTaskStartDate: viewModel.events[selectedIndex].endDate)
+        //viewModel.events[selectedIndex].startDate = startDate
+        //viewModel.events[selectedIndex].endDate = startDate.add(component: .minute, value: duration)
+        databaseController!.setTaskDate(settingTask: currentTask, newTaskDueDate: startDate.add(component: .minute, value: duration), newTaskStartDate: startDate)
         viewModel.eventsByDate = JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events)
         weekView.forceReload(reloadEvents: viewModel.eventsByDate)
     }

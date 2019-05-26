@@ -38,6 +38,8 @@ protocol DatabaseProtocol: AnyObject {
     
     func setTaskDate(settingTask:Task, newTaskDueDate: Date, newTaskStartDate: Date)
     
+    func findTask(newTaskTitle: String, newTaskDueDate: Date, newTaskStartDate: Date) -> Task
+    
     func setTaskState(newTask:Task,newTaskHasBeenCompleted:Bool) 
 }
 
