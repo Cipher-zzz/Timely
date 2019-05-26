@@ -18,7 +18,7 @@ class TaskDetailViewController: UIViewController {
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
+    // @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var taskStateLabel: UILabel!
     @IBOutlet weak var taskRepeatLabel: UILabel!
@@ -31,13 +31,13 @@ class TaskDetailViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         if task != nil {
             navigationItem.title = task!.taskTitle
-            taskLabel.text = "Task Title: \(task!.taskTitle!)"
-            addressLabel.text = "Task Address: \(task!.taskAddress!)"
-            descriptionLabel.text = "Task Description: \(task!.taskDescription!)"
+            taskLabel.text = "\(task!.taskTitle!)"
+            //addressLabel.text = "Task Address: \(task!.taskAddress!)"
+            descriptionLabel.text = "\(task!.taskDescription!)"
             let taskDate = dateFormatter.string(from: task!.taskDueDate! as Date)
-            dueDateLabel.text = "Task Due At: \(taskDate)"
+            dueDateLabel.text = "\(taskDate)"
             let taskDate2 = dateFormatter.string(from: task!.taskStartDate! as Date)
-            startDateLabel.text = "Task Start At: \(taskDate2)"
+            startDateLabel.text = "\(taskDate2)"
             if task?.taskHasBeenCompleted == true{
                 taskStateLabel.text = "Task has been completed"
             }

@@ -13,6 +13,14 @@
 		DE12720B2261F6DA0010B7AB /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12720A2261F6DA0010B7AB /* AddTaskViewController.swift */; };
 		DE12720D2261F70D0010B7AB /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12720C2261F70D0010B7AB /* TaskTableViewCell.swift */; };
 		DE12721322631CF30010B7AB /* Tasks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE12721122631CF30010B7AB /* Tasks.xcdatamodeld */; };
+		DE1C4AEC229A99AD00FC7439 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4AEB229A99AD00FC7439 /* location.png */; };
+		DE1C4AF5229A9DFA00FC7439 /* detail.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4AEE229A9DFA00FC7439 /* detail.png */; };
+		DE1C4AF6229A9DFA00FC7439 /* check-square.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4AEF229A9DFA00FC7439 /* check-square.png */; };
+		DE1C4AF7229A9DFA00FC7439 /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4AF0229A9DFA00FC7439 /* message.png */; };
+		DE1C4AF8229A9DFA00FC7439 /* play-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4AF1229A9DFA00FC7439 /* play-circle.png */; };
+		DE1C4AF9229A9DFA00FC7439 /* rollback.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4AF2229A9DFA00FC7439 /* rollback.png */; };
+		DE1C4AFA229A9DFA00FC7439 /* code.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4AF3229A9DFA00FC7439 /* code.png */; };
+		DE1C4AFB229A9DFA00FC7439 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4AF4229A9DFA00FC7439 /* stop.png */; };
 		DE1D995A228417BE000DC0AC /* VolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D9959228417BE000DC0AC /* VolumeData.swift */; };
 		DE2FAFD72240C5E6002C6A05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2FAFD52240C5E6002C6A05 /* Main.storyboard */; };
 		DE2FAFD92240C5E7002C6A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE2FAFD82240C5E7002C6A05 /* Assets.xcassets */; };
@@ -46,6 +54,14 @@
 		DE12720A2261F6DA0010B7AB /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		DE12720C2261F70D0010B7AB /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		DE12721222631CF30010B7AB /* Tasks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tasks.xcdatamodel; sourceTree = "<group>"; };
+		DE1C4AEB229A99AD00FC7439 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
+		DE1C4AEE229A9DFA00FC7439 /* detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail.png; sourceTree = "<group>"; };
+		DE1C4AEF229A9DFA00FC7439 /* check-square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-square.png"; sourceTree = "<group>"; };
+		DE1C4AF0229A9DFA00FC7439 /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
+		DE1C4AF1229A9DFA00FC7439 /* play-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-circle.png"; sourceTree = "<group>"; };
+		DE1C4AF2229A9DFA00FC7439 /* rollback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rollback.png; sourceTree = "<group>"; };
+		DE1C4AF3229A9DFA00FC7439 /* code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = code.png; sourceTree = "<group>"; };
+		DE1C4AF4229A9DFA00FC7439 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		DE1D9959228417BE000DC0AC /* VolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeData.swift; sourceTree = "<group>"; };
 		DE2FAFCE2240C5E6002C6A05 /* Timely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2FAFD62240C5E6002C6A05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +121,21 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
+		DE1C4AED229A9DB700FC7439 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C4AEF229A9DFA00FC7439 /* check-square.png */,
+				DE1C4AF3229A9DFA00FC7439 /* code.png */,
+				DE1C4AEE229A9DFA00FC7439 /* detail.png */,
+				DE1C4AF0229A9DFA00FC7439 /* message.png */,
+				DE1C4AF1229A9DFA00FC7439 /* play-circle.png */,
+				DE1C4AF2229A9DFA00FC7439 /* rollback.png */,
+				DE1C4AF4229A9DFA00FC7439 /* stop.png */,
+				DE1C4AEB229A99AD00FC7439 /* location.png */,
+			);
+			path = Icon;
+			sourceTree = "<group>";
+		};
 		DE2FAFC52240C5E6002C6A05 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +157,7 @@
 		DE2FAFD02240C5E6002C6A05 /* Timely */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C4AED229A9DB700FC7439 /* Icon */,
 				DEB320D322634E0C00CAE9C6 /* Database */,
 				DE12721022631BE10010B7AB /* DataModel */,
 				DE2FAFD52240C5E6002C6A05 /* Main.storyboard */,
@@ -243,9 +275,17 @@
 			files = (
 				DE2FAFDC2240C5E7002C6A05 /* LaunchScreen.storyboard in Resources */,
 				DEE57478228F975B00424117 /* EventCell.xib in Resources */,
+				DE1C4AFA229A9DFA00FC7439 /* code.png in Resources */,
+				DE1C4AF9229A9DFA00FC7439 /* rollback.png in Resources */,
 				DE2FAFD92240C5E7002C6A05 /* Assets.xcassets in Resources */,
 				DEB320E12265B2BC00CAE9C6 /* Cube-1s-200px.gif in Resources */,
+				DE1C4AEC229A99AD00FC7439 /* location.png in Resources */,
+				DE1C4AF5229A9DFA00FC7439 /* detail.png in Resources */,
 				DE2FAFD72240C5E6002C6A05 /* Main.storyboard in Resources */,
+				DE1C4AF8229A9DFA00FC7439 /* play-circle.png in Resources */,
+				DE1C4AFB229A9DFA00FC7439 /* stop.png in Resources */,
+				DE1C4AF6229A9DFA00FC7439 /* check-square.png in Resources */,
+				DE1C4AF7229A9DFA00FC7439 /* message.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
