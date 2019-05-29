@@ -16,6 +16,7 @@ class TimetableViewController: UIViewController, DatabaseListener {
     func taskListChange(change: DatabaseChange, tasks: [Task]) {
         viewModel.events = viewModel.eventGenerater(taskList: tasks)
         viewModel.tasks = tasks
+        calendarWeekView.forceReload(reloadEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events))
     }
     
     
