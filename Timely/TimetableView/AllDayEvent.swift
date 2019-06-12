@@ -12,7 +12,18 @@ class AllDayEvent: JZAllDayEvent {
     
     var location: String
     var title: String
+    var task: Task?
     
+    
+    init(id: String, title: String, startDate: Date, endDate: Date, location: String, isAllDay: Bool, task: Task) {
+        self.location = location
+        self.title = title
+        self.task = task
+        
+        // If you want to have you custom uid, you can set the parent class's id with your uid or UUID().uuidString (In this case, we just use the base class id)
+        super.init(id: id, startDate: startDate, endDate: endDate, isAllDay: isAllDay)
+        
+    }
     
     init(id: String, title: String, startDate: Date, endDate: Date, location: String, isAllDay: Bool) {
         self.location = location
@@ -23,6 +34,6 @@ class AllDayEvent: JZAllDayEvent {
     }
     
     override func copy(with zone: NSZone?) -> Any {
-        return AllDayEvent(id: id, title: title, startDate: startDate, endDate: endDate, location: location, isAllDay: isAllDay)
+        return AllDayEvent(id: id, title: title, startDate: startDate, endDate: endDate, location: location, isAllDay: isAllDay, task: task!)
     }
 }

@@ -10,23 +10,23 @@ import UIKit
 import JZCalendarWeekView
 
 class TimetableViewController: UIViewController, DatabaseListener {
-    // TODO: reload the view when back from tasks list
     var listenerType = ListenerType.tasks
     
     func taskListChange(change: DatabaseChange, tasks: [Task]) {
         viewModel.events = viewModel.eventGenerater(taskList: tasks)
-        viewModel.tasks = tasks
+        // viewModel.tasks = tasks
         calendarWeekView.forceReload(reloadEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events))
     }
     
     
-    @IBOutlet weak var calendarWeekView: JZLongPressWeekView!
+    @IBOutlet weak var calendarWeekView: TimetableWeekView!
     let viewModel = ViewModel()
     
     weak var databaseController: DatabaseProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        calendarWeekView.viewController = self
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
@@ -93,8 +93,9 @@ extension TimetableViewController: JZLongPressViewDelegate, JZLongPressViewDataS
     func weekView(_ weekView: JZLongPressWeekView, editingEvent: JZBaseEvent, didEndMoveLongPressAt startDate: Date) {
         let event = editingEvent as! AllDayEvent
         let duration = Calendar.current.dateComponents([.minute], from: event.startDate, to: event.endDate).minute!
-        let selectedIndex = viewModel.events.index(where: { $0.id == event.id })!
-        let currentTask = viewModel.tasks[selectedIndex]
+        // let selectedIndex = viewModel.events.index(where: { $0.id == event.id })!
+        // let currentTask = viewModel.tasks[selectedIndex]
+        let currentTask = event.task!
         //viewModel.events[selectedIndex].startDate = startDate
         //viewModel.events[selectedIndex].endDate = startDate.add(component: .minute, value: duration)
         databaseController!.setTaskDate(settingTask: currentTask, newTaskDueDate: startDate.add(component: .minute, value: duration), newTaskStartDate: startDate)

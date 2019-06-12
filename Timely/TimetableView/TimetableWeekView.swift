@@ -10,6 +10,9 @@ import Foundation
 import JZCalendarWeekView
 
 class TimetableWeekView: JZLongPressWeekView {
+    
+    var viewController: TimetableViewController?
+    
     override func registerViewClasses() {
         super.registerViewClasses()
         
@@ -46,7 +49,12 @@ class TimetableWeekView: JZLongPressWeekView {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedEvent = getCurrentEvent(with: indexPath) as! AllDayEvent
-        ToastUtil.toastMessageInTheMiddle(message: selectedEvent.title)
+        // ToastUtil.toastMessageInTheMiddle(message: selectedEvent.title)
+        //let taskDetailVC = TaskDetailViewController()
+        let taskDetailVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "TaskDetailViewController") as! TaskDetailViewController
+        taskDetailVC.task = selectedEvent.task!
+        viewController!.navigationController?.pushViewController(taskDetailVC, animated: true)
+
     }
 }
 

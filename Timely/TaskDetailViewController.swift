@@ -31,6 +31,7 @@ class TaskDetailViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         if task != nil {
             navigationItem.title = task!.taskTitle
+            print("current setting task is \(task!.taskTitle!)")
             taskLabel.text = "\(task!.taskTitle!)"
             //addressLabel.text = "Task Address: \(task!.taskAddress!)"
             descriptionLabel.text = "\(task!.taskDescription!)"

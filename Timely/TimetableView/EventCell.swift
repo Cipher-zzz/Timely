@@ -4,13 +4,15 @@
 //  Copy from framework by Jeff Zhang on 3/4/18.
 //  Created by 张泽正 on 2019/5/18.
 //  Copyright © 2019 monash. All rights reserved.
-//
+// https://www.youtube.com/watch?v=c5blPI3Asmw
 
 import UIKit
 import JZCalendarWeekView
 
 // If you want to use Move Type LongPressWeekView, you have to inherit from JZLongPressEventCell and update event when you configure cell every time
 class EventCell: JZLongPressEventCell {
+    
+    var task: Task?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -24,14 +26,15 @@ class EventCell: JZLongPressEventCell {
         // When setting alpha to cell, the alpha will back to 1 when collectionview scrolled, which means that moving cell will not be translucent
         self.contentView.backgroundColor = UIColor(hex: 0xFF69B4)
         
-        let recogniser = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        self.contentView.addGestureRecognizer(recogniser)
+//        let recogniser = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+//        self.contentView.addGestureRecognizer(recogniser)
     }
     
-    @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
-        print("tapped \(titleLabel.text!)")
-        
-    }
+//    @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
+//        print("tapped \(titleLabel.text!)")
+//        let currentEvent = self.event as! AllDayEvent
+//                
+//    }
     
     func setupBasic() {
         self.clipsToBounds = true

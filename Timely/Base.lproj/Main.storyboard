@@ -537,7 +537,7 @@
         <!--Task Detail-->
         <scene sceneID="MCg-MI-lj1">
             <objects>
-                <viewController id="HRl-2D-zSt" customClass="TaskDetailViewController" customModule="Timely" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="TaskDetailViewController" storyboardIdentifier="TaskDetailViewController" id="HRl-2D-zSt" customClass="TaskDetailViewController" customModule="Timely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SfV-jc-wF9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
