@@ -8,6 +8,7 @@
 
 import Foundation
 class VolumeData: NSObject, Decodable {
+    // Monash allocate plus use dictionary to store course items.
     var units: [String: UnitData]?
     private enum CodingKeys: String, CodingKey {
         case units = "allocated"
@@ -25,9 +26,7 @@ class UnitData: NSObject, Decodable {
     var duration: String?
     var weekPattern: String
     var dayOfWeek: String
-//    private enum RootKeys: String, CodingKey {
-//        case volumeInfo
-//    }
+
     private enum UnitKeys: String, CodingKey {
         case subjectCode = "subject_code"
         case subjectTitle = "subject_description"
@@ -56,8 +55,6 @@ class UnitData: NSObject, Decodable {
         self.duration = try unitContainer.decode(String.self, forKey: .duration)
         self.weekPattern = try unitContainer.decode(String.self, forKey: .weekPattern)
         self.dayOfWeek = try unitContainer.decode(String.self, forKey: .dayOfWeek)
-
-        
     }
 }
 

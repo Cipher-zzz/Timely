@@ -5,8 +5,8 @@
 //  Created by 张泽正 on 2019/5/5.
 //  Copyright © 2019 monash. All rights reserved.
 //
-// https://www.youtube.com/watch?v=WPpaAy73nJc
-// https://www.youtube.com/watch?v=GYzNsVFyDrU
+// Set users' location to centre: https://www.youtube.com/watch?v=WPpaAy73nJc
+// Search the address: https://www.youtube.com/watch?v=GYzNsVFyDrU
 
 import UIKit
 import MapKit
@@ -25,8 +25,6 @@ class TaskMapViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = taskAddress
         checkLocationService()
-
-        // Do any additional setup after loading the view.
     }
     
     func setupLocationManager(){
@@ -51,7 +49,6 @@ class TaskMapViewController: UIViewController {
                 print("Error")
             }
             else{
-                
                 // Getting data
                 let latitude = response?.boundingRegion.center.latitude
                 let longitude = response?.boundingRegion.center.longitude
