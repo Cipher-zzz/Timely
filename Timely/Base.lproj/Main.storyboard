@@ -116,30 +116,24 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1gr-t2-8KF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="1gr-t2-8KF">
                                         <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1gr-t2-8KF" id="epW-Ho-FAR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Widget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpJ-wk-6py">
-                                                    <rect key="frame" x="32" y="12.5" width="55" height="18.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpJ-wk-6py">
+                                                    <rect key="frame" x="32" y="12.5" width="46.5" height="18.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zsg-pm-2FS">
-                                                    <rect key="frame" x="310" y="2" width="51" height="39.5"/>
-                                                </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Zsg-pm-2FS" firstAttribute="top" secondItem="epW-Ho-FAR" secondAttribute="top" constant="2" id="0Pg-aU-CaW"/>
-                                                <constraint firstAttribute="bottom" secondItem="Zsg-pm-2FS" secondAttribute="bottom" constant="2" id="ILh-aJ-thI"/>
                                                 <constraint firstItem="DpJ-wk-6py" firstAttribute="leading" secondItem="epW-Ho-FAR" secondAttribute="leadingMargin" constant="16" id="Nuh-WF-Qvf"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="DpJ-wk-6py" secondAttribute="bottom" constant="2" id="W4w-AT-osE"/>
                                                 <constraint firstItem="DpJ-wk-6py" firstAttribute="centerY" secondItem="epW-Ho-FAR" secondAttribute="centerY" id="XWn-TR-av3"/>
-                                                <constraint firstAttribute="trailing" secondItem="Zsg-pm-2FS" secondAttribute="trailing" constant="16" id="k8g-DH-SgG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

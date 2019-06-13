@@ -187,8 +187,18 @@ class TaskListTableViewController: UITableViewController,DatabaseListener,UISear
     func taskListChange(change: DatabaseChange, tasks: [Task]) {
         currentList = tasks
         updateSearchResults(for: navigationItem.searchController!)
+        // Each time reload the page, reset the widget task
+        resetWidget()
     }
     
+    func resetWidget(){
+        // For Widget
+        // Reset the presenting task in widget
+        let sharedDefaults = UserDefaults.init(suiteName: "group.Cipher.Timely")
+        print(currentList[0].taskTitle!)
+        sharedDefaults?.setValue(currentList[0].taskTitle!, forKey: "taskTitle")
+        sharedDefaults?.setValue(currentList[0].taskDueDate!, forKey: "taskDueDate")
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

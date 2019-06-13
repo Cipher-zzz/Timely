@@ -26,6 +26,10 @@
 		DE2FAFD92240C5E7002C6A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE2FAFD82240C5E7002C6A05 /* Assets.xcassets */; };
 		DE2FAFDC2240C5E7002C6A05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2FAFDA2240C5E7002C6A05 /* LaunchScreen.storyboard */; };
 		DE70B67B22B1E74700DB50C5 /* SettingPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70B67A22B1E74700DB50C5 /* SettingPageTableViewController.swift */; };
+		DE70B68422B2481E00DB50C5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE70B68322B2481E00DB50C5 /* NotificationCenter.framework */; };
+		DE70B68722B2481E00DB50C5 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70B68622B2481E00DB50C5 /* TodayViewController.swift */; };
+		DE70B68A22B2481E00DB50C5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE70B68822B2481E00DB50C5 /* MainInterface.storyboard */; };
+		DE70B68E22B2481E00DB50C5 /* TimelyWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE70B68222B2481E00DB50C5 /* TimelyWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE99228F227D403F000760EF /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99228D227D403F000760EF /* Task+CoreDataClass.swift */; };
 		DE992290227D403F000760EF /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99228E227D403F000760EF /* Task+CoreDataProperties.swift */; };
 		DE992294227D51F1000760EF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE992293227D51F1000760EF /* WebViewController.swift */; };
@@ -45,6 +49,30 @@
 		DEE57476228F94BA00424117 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE57475228F94BA00424117 /* Extensions.swift */; };
 		DEE57478228F975B00424117 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE57477228F975B00424117 /* EventCell.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE70B68C22B2481E00DB50C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE2FAFC62240C5E6002C6A05 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE70B68122B2481E00DB50C5;
+			remoteInfo = TimelyWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE70B69222B2481E00DB50C5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DE70B68E22B2481E00DB50C5 /* TimelyWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1E7FD4FB5AFA42D1705ADB02 /* Pods-Timely.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timely.debug.xcconfig"; path = "Target Support Files/Pods-Timely/Pods-Timely.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +98,13 @@
 		DE2FAFDB2240C5E7002C6A05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE2FAFDD2240C5E7002C6A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE70B67A22B1E74700DB50C5 /* SettingPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPageTableViewController.swift; sourceTree = "<group>"; };
+		DE70B68222B2481E00DB50C5 /* TimelyWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimelyWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE70B68322B2481E00DB50C5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		DE70B68622B2481E00DB50C5 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		DE70B68922B2481E00DB50C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DE70B68B22B2481E00DB50C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE70B69322B248E700DB50C5 /* TimelyWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimelyWidget.entitlements; sourceTree = "<group>"; };
+		DE70B69422B2491200DB50C5 /* Timely.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timely.entitlements; sourceTree = "<group>"; };
 		DE99228C227D3F3F000760EF /* Tasks 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Tasks 2.xcdatamodel"; sourceTree = "<group>"; };
 		DE99228D227D403F000760EF /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DE99228E227D403F000760EF /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -98,6 +133,14 @@
 			files = (
 				DE992297227D55E0000760EF /* WebKit.framework in Frameworks */,
 				14531B01FE1AB76975906523 /* Pods_Timely.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE70B67F22B2481E00DB50C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE70B68422B2481E00DB50C5 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				DE2FAFD02240C5E6002C6A05 /* Timely */,
+				DE70B68522B2481E00DB50C5 /* TimelyWidget */,
 				DE2FAFCF2240C5E6002C6A05 /* Products */,
 				DE992295227D55E0000760EF /* Frameworks */,
 				44909581BFF044EB9B9E4DC3 /* Pods */,
@@ -152,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				DE2FAFCE2240C5E6002C6A05 /* Timely.app */,
+				DE70B68222B2481E00DB50C5 /* TimelyWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +204,7 @@
 		DE2FAFD02240C5E6002C6A05 /* Timely */ = {
 			isa = PBXGroup;
 			children = (
+				DE70B69422B2491200DB50C5 /* Timely.entitlements */,
 				DEB320D322634E0C00CAE9C6 /* Database */,
 				DE12721022631BE10010B7AB /* DataModel */,
 				DE2FAFD52240C5E6002C6A05 /* Main.storyboard */,
@@ -182,11 +228,23 @@
 			path = Timely;
 			sourceTree = "<group>";
 		};
+		DE70B68522B2481E00DB50C5 /* TimelyWidget */ = {
+			isa = PBXGroup;
+			children = (
+				DE70B69322B248E700DB50C5 /* TimelyWidget.entitlements */,
+				DE70B68622B2481E00DB50C5 /* TodayViewController.swift */,
+				DE70B68822B2481E00DB50C5 /* MainInterface.storyboard */,
+				DE70B68B22B2481E00DB50C5 /* Info.plist */,
+			);
+			path = TimelyWidget;
+			sourceTree = "<group>";
+		};
 		DE992295227D55E0000760EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				DE992296227D55E0000760EF /* WebKit.framework */,
 				3C450FBCB1EF76CC59ACD93D /* Pods_Timely.framework */,
+				DE70B68322B2481E00DB50C5 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -227,15 +285,34 @@
 				DE2FAFCB2240C5E6002C6A05 /* Frameworks */,
 				DE2FAFCC2240C5E6002C6A05 /* Resources */,
 				126E892D78D23D873C524FE8 /* [CP] Embed Pods Frameworks */,
+				DE70B69222B2481E00DB50C5 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DE70B68D22B2481E00DB50C5 /* PBXTargetDependency */,
 			);
 			name = Timely;
 			productName = Timely;
 			productReference = DE2FAFCE2240C5E6002C6A05 /* Timely.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DE70B68122B2481E00DB50C5 /* TimelyWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE70B68F22B2481E00DB50C5 /* Build configuration list for PBXNativeTarget "TimelyWidget" */;
+			buildPhases = (
+				DE70B67E22B2481E00DB50C5 /* Sources */,
+				DE70B67F22B2481E00DB50C5 /* Frameworks */,
+				DE70B68022B2481E00DB50C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimelyWidget;
+			productName = TimelyWidget;
+			productReference = DE70B68222B2481E00DB50C5 /* TimelyWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -243,13 +320,26 @@
 		DE2FAFC62240C5E6002C6A05 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = monash;
 				TargetAttributes = {
 					DE2FAFCD2240C5E6002C6A05 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					DE70B68122B2481E00DB50C5 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -267,6 +357,7 @@
 			projectRoot = "";
 			targets = (
 				DE2FAFCD2240C5E6002C6A05 /* Timely */,
+				DE70B68122B2481E00DB50C5 /* TimelyWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -289,6 +380,14 @@
 				DE1C4AFB229A9DFA00FC7439 /* stop.png in Resources */,
 				DE1C4AF6229A9DFA00FC7439 /* check-square.png in Resources */,
 				DE1C4AF7229A9DFA00FC7439 /* message.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE70B68022B2481E00DB50C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE70B68A22B2481E00DB50C5 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +470,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE70B67E22B2481E00DB50C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE70B68722B2481E00DB50C5 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE70B68D22B2481E00DB50C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE70B68122B2481E00DB50C5 /* TimelyWidget */;
+			targetProxy = DE70B68C22B2481E00DB50C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DE2FAFD52240C5E6002C6A05 /* Main.storyboard */ = {
@@ -388,6 +503,14 @@
 				DE2FAFDB2240C5E7002C6A05 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DE70B68822B2481E00DB50C5 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE70B68922B2481E00DB50C5 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -514,7 +637,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1E7FD4FB5AFA42D1705ADB02 /* Pods-Timely.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Timely/Timely.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A434QHK996;
 				INFOPLIST_FILE = "$(SRCROOT)/Timely/Info.plist";
@@ -533,7 +658,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9B8B39002A1E5731912A1E2 /* Pods-Timely.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Timely/Timely.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A434QHK996;
 				INFOPLIST_FILE = "$(SRCROOT)/Timely/Info.plist";
@@ -544,6 +671,49 @@
 				PRODUCT_BUNDLE_IDENTIFIER = monash.Timely;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE70B69022B2481E00DB50C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TimelyWidget/TimelyWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A434QHK996;
+				INFOPLIST_FILE = TimelyWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = monash.Timely.TimelyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE70B69122B2481E00DB50C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TimelyWidget/TimelyWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A434QHK996;
+				INFOPLIST_FILE = TimelyWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = monash.Timely.TimelyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -565,6 +735,15 @@
 			buildConfigurations = (
 				DE2FAFE12240C5E7002C6A05 /* Debug */,
 				DE2FAFE22240C5E7002C6A05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE70B68F22B2481E00DB50C5 /* Build configuration list for PBXNativeTarget "TimelyWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE70B69022B2481E00DB50C5 /* Debug */,
+				DE70B69122B2481E00DB50C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
