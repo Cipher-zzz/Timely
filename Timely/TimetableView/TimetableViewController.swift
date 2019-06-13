@@ -14,7 +14,6 @@ class TimetableViewController: UIViewController, DatabaseListener {
     
     func taskListChange(change: DatabaseChange, tasks: [Task]) {
         viewModel.events = viewModel.eventGenerater(taskList: tasks)
-        // viewModel.tasks = tasks
         calendarWeekView.forceReload(reloadEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events))
     }
     
@@ -50,7 +49,7 @@ class TimetableViewController: UIViewController, DatabaseListener {
             calendarWeekView.setupCalendar(numOfDays: 7,
                                            setDate: Date(),
                                            allEvents: viewModel.eventsByDate,
-                                           scrollType: .pageScroll,
+                                           scrollType: .sectionScroll,
                                            scrollableRange: (nil, nil))
         }
         
@@ -64,7 +63,6 @@ class TimetableViewController: UIViewController, DatabaseListener {
         calendarWeekView.moveTimeMinInterval = 15
     }
     
-    /// For example only
     private func setupCalendarViewWithSelectedData() {
         guard let selectedData = viewModel.currentSelectedData else { return }
         calendarWeekView.setupCalendar(numOfDays: selectedData.numOfDays,
@@ -73,6 +71,14 @@ class TimetableViewController: UIViewController, DatabaseListener {
                                        scrollType: selectedData.scrollType,
                                        firstDayOfWeek: selectedData.firstDayOfWeek)
         calendarWeekView.updateFlowLayout(JZWeekViewFlowLayout(hourGridDivision: selectedData.hourGridDivision))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "settingPageSegue" {
+            let destination = segue.destination as! SettingPageTableViewController
+            destination.viewController = self
+        }
+        
     }
 }
 

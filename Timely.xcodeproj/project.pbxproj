@@ -25,6 +25,7 @@
 		DE2FAFD72240C5E6002C6A05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2FAFD52240C5E6002C6A05 /* Main.storyboard */; };
 		DE2FAFD92240C5E7002C6A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE2FAFD82240C5E7002C6A05 /* Assets.xcassets */; };
 		DE2FAFDC2240C5E7002C6A05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2FAFDA2240C5E7002C6A05 /* LaunchScreen.storyboard */; };
+		DE70B67B22B1E74700DB50C5 /* SettingPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70B67A22B1E74700DB50C5 /* SettingPageTableViewController.swift */; };
 		DE99228F227D403F000760EF /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99228D227D403F000760EF /* Task+CoreDataClass.swift */; };
 		DE992290227D403F000760EF /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99228E227D403F000760EF /* Task+CoreDataProperties.swift */; };
 		DE992294227D51F1000760EF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE992293227D51F1000760EF /* WebViewController.swift */; };
@@ -68,6 +69,7 @@
 		DE2FAFD82240C5E7002C6A05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE2FAFDB2240C5E7002C6A05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE2FAFDD2240C5E7002C6A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE70B67A22B1E74700DB50C5 /* SettingPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPageTableViewController.swift; sourceTree = "<group>"; };
 		DE99228C227D3F3F000760EF /* Tasks 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Tasks 2.xcdatamodel"; sourceTree = "<group>"; };
 		DE99228D227D403F000760EF /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DE99228E227D403F000760EF /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				DE992293227D51F1000760EF /* WebViewController.swift */,
 				DE1D9959228417BE000DC0AC /* VolumeData.swift */,
 				DE1C4AED229A9DB700FC7439 /* Icon */,
+				DE70B67A22B1E74700DB50C5 /* SettingPageTableViewController.swift */,
 			);
 			path = Timely;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				DE1D995A228417BE000DC0AC /* VolumeData.swift in Sources */,
 				DE99229B227E7DCA000760EF /* TaskMapViewController.swift in Sources */,
 				DEB320D92263580100CAE9C6 /* MulticastDelegate.swift in Sources */,
+				DE70B67B22B1E74700DB50C5 /* SettingPageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
