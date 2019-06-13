@@ -109,7 +109,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EZf-3H-O2d">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <mutableString key="text">JZCalendarWeekView
+                                        <string key="text">JZCalendarWeekView
 
 MIT License
 
@@ -131,7 +131,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</mutableString>
+SOFTWARE.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -769,10 +769,13 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9qt-Av-UZD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="UPP-Xz-B0p">
+                                <rect key="frame" x="-2" y="64" width="379" height="603"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qt-Av-UZD">
                                 <rect key="frame" x="-4" y="60" width="379" height="607"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRV-25-c5d">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRV-25-c5d">
                                         <rect key="frame" x="48" y="143" width="134" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="0CS-AL-tnl"/>
@@ -781,7 +784,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9d-hp-18f">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9d-hp-18f">
                                         <rect key="frame" x="48" y="63" width="124" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="zQF-HR-Mcb"/>
@@ -790,7 +793,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Task Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Leo-hw-AZA">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Task Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Leo-hw-AZA">
                                         <rect key="frame" x="48" y="23" width="81" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="8ca-0z-cA2"/>
@@ -799,7 +802,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Task State Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQF-CN-gNl">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Task State Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQF-CN-gNl">
                                         <rect key="frame" x="48" y="183" width="126" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="nGA-4T-Bu0"/>
@@ -815,7 +818,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                             <segue destination="ayO-wn-XRZ" kind="show" identifier="mapSegue" id="Bot-Qs-1rN"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Due Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSF-Ti-PmI">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Due Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSF-Ti-PmI">
                                         <rect key="frame" x="48" y="103" width="118" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="7ib-DY-3gK"/>
@@ -824,34 +827,34 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="location.png" translatesAutoresizingMaskIntoConstraints="NO" id="9WQ-HO-di3">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="location.png" translatesAutoresizingMaskIntoConstraints="NO" id="9WQ-HO-di3">
                                         <rect key="frame" x="16" y="260" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="J00-mr-FPh"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="code.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yco-bt-Bf9">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="code.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yco-bt-Bf9">
                                         <rect key="frame" x="16" y="20" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="CFD-G0-fMa"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="play-circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="WFZ-KX-uCQ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="play-circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="WFZ-KX-uCQ">
                                         <rect key="frame" x="16" y="60" width="24" height="24"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stop.png" translatesAutoresizingMaskIntoConstraints="NO" id="5UB-gp-ZY7">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stop.png" translatesAutoresizingMaskIntoConstraints="NO" id="5UB-gp-ZY7">
                                         <rect key="frame" x="16" y="100" width="24" height="24"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="detail.png" translatesAutoresizingMaskIntoConstraints="NO" id="fXF-jT-RI6">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="detail.png" translatesAutoresizingMaskIntoConstraints="NO" id="fXF-jT-RI6">
                                         <rect key="frame" x="16" y="140" width="24" height="24"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="check-square.png" translatesAutoresizingMaskIntoConstraints="NO" id="td5-nb-Z3e">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="check-square.png" translatesAutoresizingMaskIntoConstraints="NO" id="td5-nb-Z3e">
                                         <rect key="frame" x="16" y="180" width="24" height="24"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rollback.png" translatesAutoresizingMaskIntoConstraints="NO" id="DPQ-zo-L73">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rollback.png" translatesAutoresizingMaskIntoConstraints="NO" id="DPQ-zo-L73">
                                         <rect key="frame" x="16" y="220" width="24" height="24"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Task Repeat Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBz-qv-B6j">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Task Repeat Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBz-qv-B6j">
                                         <rect key="frame" x="48" y="223" width="140" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="qim-Wc-zma"/>
@@ -862,6 +865,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Leo-hw-AZA" firstAttribute="top" secondItem="9qt-Av-UZD" secondAttribute="top" constant="27" id="0wk-Bp-wbp"/>
                                     <constraint firstItem="aBz-qv-B6j" firstAttribute="leading" secondItem="82e-61-wsS" secondAttribute="leading" id="1a1-tN-o2X"/>
                                     <constraint firstItem="5UB-gp-ZY7" firstAttribute="top" secondItem="WFZ-KX-uCQ" secondAttribute="bottom" constant="16" id="2gG-cw-n4e"/>
                                     <constraint firstItem="RSF-Ti-PmI" firstAttribute="leading" secondItem="5UB-gp-ZY7" secondAttribute="trailing" constant="8" symbolic="YES" id="3z0-X9-9lz"/>
@@ -873,22 +877,22 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                     <constraint firstItem="DPQ-zo-L73" firstAttribute="leading" secondItem="9WQ-HO-di3" secondAttribute="leading" id="JRs-9h-7M4"/>
                                     <constraint firstItem="Yco-bt-Bf9" firstAttribute="leading" secondItem="WFZ-KX-uCQ" secondAttribute="leading" id="JYi-2b-do6"/>
                                     <constraint firstItem="F9d-hp-18f" firstAttribute="top" secondItem="Leo-hw-AZA" secondAttribute="bottom" constant="19" id="Jeq-Vx-w5T"/>
+                                    <constraint firstAttribute="trailing" secondItem="aBz-qv-B6j" secondAttribute="trailing" constant="191" id="Kcw-lF-TXo"/>
                                     <constraint firstItem="fXF-jT-RI6" firstAttribute="top" secondItem="5UB-gp-ZY7" secondAttribute="bottom" constant="16" id="NqW-U3-uiH"/>
                                     <constraint firstItem="fXF-jT-RI6" firstAttribute="leading" secondItem="td5-nb-Z3e" secondAttribute="leading" id="Q7z-0g-zbE"/>
                                     <constraint firstItem="cRV-25-c5d" firstAttribute="leading" secondItem="fXF-jT-RI6" secondAttribute="trailing" constant="8" symbolic="YES" id="Sha-P5-pgb"/>
                                     <constraint firstItem="82e-61-wsS" firstAttribute="top" secondItem="aBz-qv-B6j" secondAttribute="bottom" constant="10" id="Ssf-cR-mUs"/>
                                     <constraint firstItem="cRV-25-c5d" firstAttribute="top" secondItem="RSF-Ti-PmI" secondAttribute="bottom" constant="19" id="UG6-mQ-FiK"/>
-                                    <constraint firstItem="Yco-bt-Bf9" firstAttribute="leading" secondItem="9qt-Av-UZD" secondAttribute="leading" constant="16" id="ZOV-gh-urx"/>
+                                    <constraint firstAttribute="bottom" secondItem="9WQ-HO-di3" secondAttribute="bottom" constant="319" id="V3k-sF-yry"/>
+                                    <constraint firstItem="Yco-bt-Bf9" firstAttribute="leading" secondItem="9qt-Av-UZD" secondAttribute="leading" constant="16" id="XhG-52-UZl"/>
                                     <constraint firstItem="RSF-Ti-PmI" firstAttribute="leading" secondItem="cRV-25-c5d" secondAttribute="leading" id="Zkb-h8-G8x"/>
                                     <constraint firstItem="aBz-qv-B6j" firstAttribute="leading" secondItem="DPQ-zo-L73" secondAttribute="trailing" constant="8" symbolic="YES" id="a4M-BU-6oJ"/>
+                                    <constraint firstItem="Yco-bt-Bf9" firstAttribute="top" secondItem="9qt-Av-UZD" secondAttribute="top" constant="24" id="a5V-BH-UPW"/>
                                     <constraint firstItem="5UB-gp-ZY7" firstAttribute="leading" secondItem="fXF-jT-RI6" secondAttribute="leading" id="e4g-P6-wTm"/>
                                     <constraint firstItem="WFZ-KX-uCQ" firstAttribute="leading" secondItem="5UB-gp-ZY7" secondAttribute="leading" id="ffo-qg-DtO"/>
                                     <constraint firstItem="F9d-hp-18f" firstAttribute="leading" secondItem="WFZ-KX-uCQ" secondAttribute="trailing" constant="8" symbolic="YES" id="hFx-Fr-g1r"/>
                                     <constraint firstItem="Yco-bt-Bf9" firstAttribute="bottom" secondItem="Leo-hw-AZA" secondAttribute="bottom" id="hXW-js-MJi"/>
-                                    <constraint firstItem="Leo-hw-AZA" firstAttribute="top" secondItem="9qt-Av-UZD" secondAttribute="top" constant="27" id="hiP-lB-Q7Y"/>
-                                    <constraint firstAttribute="trailing" secondItem="aBz-qv-B6j" secondAttribute="trailing" constant="191" id="ifU-5d-5Ds"/>
                                     <constraint firstItem="F9d-hp-18f" firstAttribute="leading" secondItem="RSF-Ti-PmI" secondAttribute="leading" id="ipl-Gm-bsh"/>
-                                    <constraint firstItem="Yco-bt-Bf9" firstAttribute="top" secondItem="9qt-Av-UZD" secondAttribute="top" constant="24" id="jED-rh-6v9"/>
                                     <constraint firstItem="xQF-CN-gNl" firstAttribute="leading" secondItem="aBz-qv-B6j" secondAttribute="leading" id="k39-9n-nUM"/>
                                     <constraint firstItem="DPQ-zo-L73" firstAttribute="top" secondItem="td5-nb-Z3e" secondAttribute="bottom" constant="16" id="kHJ-Ek-5rn"/>
                                     <constraint firstItem="WFZ-KX-uCQ" firstAttribute="bottom" secondItem="F9d-hp-18f" secondAttribute="bottom" id="m2a-1I-x2b"/>
@@ -908,10 +912,14 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9qt-Av-UZD" firstAttribute="top" secondItem="SfV-jc-wF9" secondAttribute="topMargin" constant="-4" id="30i-eY-AbE"/>
-                            <constraint firstAttribute="trailing" secondItem="9qt-Av-UZD" secondAttribute="trailing" id="RhX-bs-IhD"/>
-                            <constraint firstItem="9qt-Av-UZD" firstAttribute="bottom" secondItem="Elv-8Q-6ZF" secondAttribute="bottom" id="b8x-HJ-oed"/>
-                            <constraint firstItem="9qt-Av-UZD" firstAttribute="leading" secondItem="SfV-jc-wF9" secondAttribute="leadingMargin" constant="-20" id="vi2-ws-y2E"/>
+                            <constraint firstItem="9qt-Av-UZD" firstAttribute="top" secondItem="SfV-jc-wF9" secondAttribute="topMargin" constant="-4" id="4Dz-tu-pJm"/>
+                            <constraint firstItem="9qt-Av-UZD" firstAttribute="bottom" secondItem="Elv-8Q-6ZF" secondAttribute="bottom" id="8CG-ke-VTw"/>
+                            <constraint firstItem="UPP-Xz-B0p" firstAttribute="leading" secondItem="SfV-jc-wF9" secondAttribute="leadingMargin" constant="-18" id="A7W-ng-QeD"/>
+                            <constraint firstItem="UPP-Xz-B0p" firstAttribute="bottom" secondItem="Elv-8Q-6ZF" secondAttribute="bottom" id="ZLX-DC-9mC"/>
+                            <constraint firstItem="UPP-Xz-B0p" firstAttribute="top" secondItem="Elv-8Q-6ZF" secondAttribute="top" id="b8j-Z6-7Z9"/>
+                            <constraint firstItem="9qt-Av-UZD" firstAttribute="leading" secondItem="SfV-jc-wF9" secondAttribute="leadingMargin" constant="-20" id="ejM-B4-qqA"/>
+                            <constraint firstItem="UPP-Xz-B0p" firstAttribute="centerX" secondItem="SfV-jc-wF9" secondAttribute="centerX" id="riz-pX-fmj"/>
+                            <constraint firstAttribute="trailing" secondItem="9qt-Av-UZD" secondAttribute="trailing" id="zVh-em-Vyv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Elv-8Q-6ZF"/>
                     </view>
@@ -990,12 +998,13 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
         <image name="code.png" width="200" height="200"/>
         <image name="detail.png" width="200" height="200"/>
         <image name="location.png" width="200" height="200"/>
+        <image name="logo1.png" width="315" height="315"/>
         <image name="play-circle.png" width="200" height="200"/>
         <image name="rollback.png" width="200" height="200"/>
         <image name="stop.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="o3D-Ue-P84"/>
-        <segue reference="0DL-jj-Ysx"/>
+        <segue reference="2kd-Mz-zxZ"/>
     </inferredMetricsTieBreakers>
 </document>

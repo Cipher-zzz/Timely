@@ -51,6 +51,8 @@ class TaskDetailViewController: UIViewController {
                 taskRepeatLabel.text = "No repeat"
             }
             mapButton.setTitle(task!.taskAddress, for: .normal)
+            
+            // view.backgroundColor = UIColor(patternImage: UIImage(named: "logo1.png")!)
         }
     }
     
