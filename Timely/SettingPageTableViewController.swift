@@ -4,7 +4,7 @@
 //
 //  Created by 张泽正 on 2019/6/13.
 //  Copyright © 2019 monash. All rights reserved.
-// Picker: https://www.youtube.com/watch?v=HkDDGfMiuOA
+// Picker: https://www.youtube.com/watch?v=HkDDGfMiuOA and https://stackoverflow.com/questions/31728680/how-to-make-an-uipickerview-with-a-done-button
 
 import UIKit
 
@@ -23,36 +23,39 @@ class SettingPageTableViewController: UITableViewController {
         picker?.delegate = self
         picker?.dataSource = self
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SettingPageTableViewController.viewTapped(gestureRecognizer:)))
-        
-        view.addGestureRecognizer(tapGesture)
-        
         numOfDaysTextField.inputView = picker
         
-
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // ToolBar
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.sizeToFit()
+        
+        // Adding Button ToolBar
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(SettingPageTableViewController.doneClick))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        numOfDaysTextField.inputAccessoryView = toolBar
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 3
     }
     
-    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
-        // If user tap somewhere else, end editing.
-        view.endEditing(true)
+    @objc func doneClick() {
+        numOfDaysTextField.resignFirstResponder()
+    }
+    @objc func cancelClick() {
+        numOfDaysTextField.resignFirstResponder()
     }
     
     /*
@@ -130,5 +133,4 @@ extension SettingPageTableViewController: UIPickerViewDelegate, UIPickerViewData
         viewController?.calendarWeekView.numOfDays = row + 1
         viewController?.calendarWeekView.refreshWeekView()
     }
-    
 }
