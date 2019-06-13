@@ -31,6 +31,7 @@
 		DE70B68A22B2481E00DB50C5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE70B68822B2481E00DB50C5 /* MainInterface.storyboard */; };
 		DE70B68E22B2481E00DB50C5 /* TimelyWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE70B68222B2481E00DB50C5 /* TimelyWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE70B69A22B282C900DB50C5 /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE70B69922B282C900DB50C5 /* logo1.png */; };
+		DE70B69C22B28A0E00DB50C5 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70B69B22B28A0E00DB50C5 /* ImageViewController.swift */; };
 		DE99228F227D403F000760EF /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99228D227D403F000760EF /* Task+CoreDataClass.swift */; };
 		DE992290227D403F000760EF /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99228E227D403F000760EF /* Task+CoreDataProperties.swift */; };
 		DE992294227D51F1000760EF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE992293227D51F1000760EF /* WebViewController.swift */; };
@@ -107,6 +108,7 @@
 		DE70B69322B248E700DB50C5 /* TimelyWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimelyWidget.entitlements; sourceTree = "<group>"; };
 		DE70B69422B2491200DB50C5 /* Timely.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timely.entitlements; sourceTree = "<group>"; };
 		DE70B69922B282C900DB50C5 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
+		DE70B69B22B28A0E00DB50C5 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		DE99228C227D3F3F000760EF /* Tasks 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Tasks 2.xcdatamodel"; sourceTree = "<group>"; };
 		DE99228D227D403F000760EF /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DE99228E227D403F000760EF /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				DE992293227D51F1000760EF /* WebViewController.swift */,
 				DE1D9959228417BE000DC0AC /* VolumeData.swift */,
 				DE70B67A22B1E74700DB50C5 /* SettingPageTableViewController.swift */,
+				DE70B69B22B28A0E00DB50C5 /* ImageViewController.swift */,
 				DE1C4AED229A9DB700FC7439 /* Icon */,
 			);
 			path = Timely;
@@ -455,6 +458,7 @@
 				DE12720D2261F70D0010B7AB /* TaskTableViewCell.swift in Sources */,
 				DE12720B2261F6DA0010B7AB /* AddTaskViewController.swift in Sources */,
 				DE1272072261F5A50010B7AB /* TaskListTableViewController.swift in Sources */,
+				DE70B69C22B28A0E00DB50C5 /* ImageViewController.swift in Sources */,
 				DEB320D522634E2F00CAE9C6 /* DatabaseProtocol.swift in Sources */,
 				DEE5746F228E6EF800424117 /* AllDayEvent.swift in Sources */,
 				DEB320D722634FFA00CAE9C6 /* CoreDataController.swift in Sources */,

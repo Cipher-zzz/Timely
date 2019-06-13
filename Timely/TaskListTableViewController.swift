@@ -195,7 +195,6 @@ class TaskListTableViewController: UITableViewController,DatabaseListener,UISear
         // For Widget
         // Reset the presenting task in widget
         let sharedDefaults = UserDefaults.init(suiteName: "group.Cipher.Timely")
-        print(currentList[0].taskTitle!)
         sharedDefaults?.setValue(currentList[0].taskTitle!, forKey: "taskTitle")
         sharedDefaults?.setValue(currentList[0].taskDueDate!, forKey: "taskDueDate")
     }

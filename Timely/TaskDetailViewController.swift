@@ -23,6 +23,7 @@ class TaskDetailViewController: UIViewController {
     @IBOutlet weak var taskStateLabel: UILabel!
     @IBOutlet weak var taskRepeatLabel: UILabel!
     @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,10 @@ class TaskDetailViewController: UIViewController {
             }
             mapButton.setTitle(task!.taskAddress, for: .normal)
             
-            // view.backgroundColor = UIColor(patternImage: UIImage(named: "logo1.png")!)
+            let back = UserDefaults.init(suiteName: "group.Cipher.Timely")?.value(forKey: "backgroundPicture")
+            if back != nil{
+                self.backgroundImage.image = UIImage(data: back as! Data)?.alpha(0.3)
+            }
         }
     }
     
@@ -78,4 +82,15 @@ class TaskDetailViewController: UIViewController {
     }
     */
 
+}
+
+extension UIImage {
+    
+    func alpha(_ value:CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(at: CGPoint.zero, blendMode: .normal, alpha: value)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
 }

@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1u-br-0SY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1567.2" y="-494.30284857571218"/>
+            <point key="canvasLocation" x="-727" y="-494"/>
         </scene>
         <!--Privacy-->
         <scene sceneID="59X-3b-dSd">
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fky-Qq-z4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1573.5999999999999" y="240.62968515742131"/>
+            <point key="canvasLocation" x="737" y="427"/>
         </scene>
         <!--Licenses-->
         <scene sceneID="U7t-AS-8ld">
@@ -159,7 +159,7 @@ SOFTWARE.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pt3-F0-xNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-770.39999999999998" y="246.9265367316342"/>
+            <point key="canvasLocation" x="1486" y="427"/>
         </scene>
         <!--About this App-->
         <scene sceneID="mi5-6a-qvS">
@@ -212,7 +212,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Wb-hj-Geu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="247.82608695652175"/>
+            <point key="canvasLocation" x="2270" y="427"/>
         </scene>
         <!--Setting Page Table View Controller-->
         <scene sceneID="Ggy-pv-Sdd">
@@ -278,6 +278,9 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                                 <constraint firstItem="gkz-Oc-Zun" firstAttribute="centerY" secondItem="S6x-fW-pLq" secondAttribute="centerY" id="rlf-Ls-LR1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="H70-01-Ux9" kind="show" id="ldA-lX-TUl"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="v7A-fy-1Jd">
                                         <rect key="frame" x="0.0" y="116" width="375" height="44"/>
@@ -391,7 +394,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qey-SF-AJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-793" y="-490"/>
+            <point key="canvasLocation" x="-18" y="-492"/>
         </scene>
         <!--New Task-->
         <scene sceneID="tne-QT-ifu">
@@ -569,7 +572,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18.399999999999999" y="-494.30284857571218"/>
+            <point key="canvasLocation" x="737" y="-491"/>
         </scene>
         <!--Timetable View Controller-->
         <scene sceneID="csq-K3-Ouk">
@@ -931,6 +934,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backgroundImage" destination="UPP-Xz-B0p" id="Fby-IR-fsM"/>
                         <outlet property="descriptionLabel" destination="cRV-25-c5d" id="yuX-dx-7fs"/>
                         <outlet property="dueDateLabel" destination="RSF-Ti-PmI" id="dyM-zj-xMJ"/>
                         <outlet property="mapButton" destination="82e-61-wsS" id="Sxi-CP-sQ3"/>
@@ -942,7 +946,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oad-I8-aWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485.5999999999999" y="-494.30284857571218"/>
+            <point key="canvasLocation" x="1486" y="-494"/>
         </scene>
         <!--Address-->
         <scene sceneID="aCR-g7-fLN">
@@ -972,7 +976,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tpe-Vy-TEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2343" y="-494"/>
+            <point key="canvasLocation" x="2270" y="-491"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8bh-Uu-j6j">
@@ -991,6 +995,55 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZ5-fJ-7Ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-726" y="-1336"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="9cR-D3-DnD">
+            <objects>
+                <viewController title="Camera" id="H70-01-Ux9" customClass="ImageViewController" customModule="Timely" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ut8-92-LNn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c5U-fq-cvo">
+                                <rect key="frame" x="8" y="80" width="359" height="359"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="c5U-fq-cvo" secondAttribute="height" multiplier="1:1" id="dkw-Bj-tAR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ys-Dp-mEg">
+                                <rect key="frame" x="8" y="447" width="76" height="30"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="H70-01-Ux9" eventType="touchUpInside" id="jYR-Gt-KdX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6o-7m-RNe">
+                                <rect key="frame" x="289" y="447" width="78" height="30"/>
+                                <state key="normal" title="Save Photo"/>
+                                <connections>
+                                    <action selector="savePhoto:" destination="H70-01-Ux9" eventType="touchUpInside" id="md4-3c-Y3P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h6o-7m-RNe" firstAttribute="top" secondItem="c5U-fq-cvo" secondAttribute="bottom" constant="8" id="MD0-xY-dUk"/>
+                            <constraint firstItem="c5U-fq-cvo" firstAttribute="leading" secondItem="dyK-9F-qKp" secondAttribute="leading" constant="8" id="QHR-60-bHn"/>
+                            <constraint firstItem="6ys-Dp-mEg" firstAttribute="leading" secondItem="dyK-9F-qKp" secondAttribute="leading" constant="8" id="TXq-0t-Iz6"/>
+                            <constraint firstItem="dyK-9F-qKp" firstAttribute="trailing" secondItem="c5U-fq-cvo" secondAttribute="trailing" constant="8" id="isd-Ct-0qr"/>
+                            <constraint firstItem="dyK-9F-qKp" firstAttribute="trailing" secondItem="h6o-7m-RNe" secondAttribute="trailing" constant="8" id="lTA-7V-uXd"/>
+                            <constraint firstItem="c5U-fq-cvo" firstAttribute="top" secondItem="dyK-9F-qKp" secondAttribute="top" constant="16" id="lmo-Hi-DhX"/>
+                            <constraint firstItem="6ys-Dp-mEg" firstAttribute="top" secondItem="c5U-fq-cvo" secondAttribute="bottom" constant="8" id="nRA-BV-qC8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dyK-9F-qKp"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="c5U-fq-cvo" id="ny3-QR-SHj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vY7-qE-5vS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="427"/>
         </scene>
     </scenes>
     <resources>
