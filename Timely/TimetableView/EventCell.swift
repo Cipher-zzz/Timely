@@ -50,22 +50,29 @@ class EventCell: JZLongPressEventCell {
     func configureCell(event: AllDayEvent, isAllDay: Bool = false) {
         self.event = event
         locationLabel.text = event.location
-        titleLabel.text = event.title
-        if event.title.contains("LABORATORY") || event.title.contains("WORKSHOP"){
-            self.borderView.backgroundColor = UIColor(hex: 0xDAA520)    //  Side
-            self.contentView.backgroundColor = UIColor(hex: 0xFFD700)   // Contain
-        }
-        else if event.title.contains("LECTURE") || event.title.contains("SEMINAR"){
-            self.borderView.backgroundColor = UIColor(hex: 0x0899FF)    //  Side
-            self.contentView.backgroundColor = UIColor(hex: 0xEEF7FF)   // Contain
-        }
-        else if event.title.contains("TUTORIAL"){
-            self.borderView.backgroundColor = UIColor(hex: 0x00FF00)    //  Side
-            self.contentView.backgroundColor = UIColor(hex: 0x00FF7F)   // Contain
+        if event.title.count>30 {
+            titleLabel.text = String(event.title.prefix(7))
         }
         else{
-            self.contentView.backgroundColor = UIColor(hex: 0xFF69B4)
-            self.borderView.backgroundColor = UIColor(hex: 0xFF1493)
+            titleLabel.text = event.title
+        }
+        
+        // Set the color of cell
+        if event.title.contains("LABORATORY") || event.title.contains("WORKSHOP"){
+            self.borderView.backgroundColor = UIColor(hex: 0xDAA520)    //  Side color
+            self.contentView.backgroundColor = UIColor(hex: 0xFFD700)   // Contain color
+        }
+        else if event.title.contains("LECTURE") || event.title.contains("SEMINAR"){
+            self.borderView.backgroundColor = UIColor(hex: 0x0899FF)    //  Side color
+            self.contentView.backgroundColor = UIColor(hex: 0xEEF7FF)   // Contain color
+        }
+        else if event.title.contains("TUTORIAL"){
+            self.borderView.backgroundColor = UIColor(hex: 0x00FF00)    //  Side color
+            self.contentView.backgroundColor = UIColor(hex: 0x00FF7F)   // Contain color
+        }
+        else{
+            self.borderView.backgroundColor = UIColor(hex: 0xFF1493)    //  Side color
+            self.contentView.backgroundColor = UIColor(hex: 0xFF69B4)   // Contain color
         }
         
         locationLabel.isHidden = isAllDay
