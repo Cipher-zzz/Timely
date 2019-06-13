@@ -12,12 +12,6 @@ import JZCalendarWeekView
 class TimetableViewController: UIViewController, DatabaseListener {
     var listenerType = ListenerType.tasks
     
-    func taskListChange(change: DatabaseChange, tasks: [Task]) {
-        viewModel.events = viewModel.eventGenerater(taskList: tasks)
-        calendarWeekView.forceReload(reloadEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events))
-    }
-    
-    
     @IBOutlet weak var calendarWeekView: TimetableWeekView!
     let viewModel = ViewModel()
     
@@ -43,9 +37,9 @@ class TimetableViewController: UIViewController, DatabaseListener {
         databaseController?.addListener(listener: self)
         
         if viewModel.currentSelectedData != nil {
-            // For example only
-            setupCalendarViewWithSelectedData()
-        } else {
+            setupCalendarViewWithSelectedData() // For the future setting function, the SelectedData is a setting log, contains all the attributes of setupCalendar()
+        }
+        else {
             calendarWeekView.setupCalendar(numOfDays: 7,
                                            setDate: Date(),
                                            allEvents: viewModel.eventsByDate,
@@ -63,6 +57,7 @@ class TimetableViewController: UIViewController, DatabaseListener {
         calendarWeekView.moveTimeMinInterval = 15
     }
     
+    // For the future setting function, the SelectedData is a setting log, contains all the attributes of setupCalendar()
     private func setupCalendarViewWithSelectedData() {
         guard let selectedData = viewModel.currentSelectedData else { return }
         calendarWeekView.setupCalendar(numOfDays: selectedData.numOfDays,
@@ -74,11 +69,17 @@ class TimetableViewController: UIViewController, DatabaseListener {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Send this view controller to setting view controller.
         if segue.identifier == "settingPageSegue" {
             let destination = segue.destination as! SettingPageTableViewController
             destination.viewController = self
         }
-        
+    }
+    
+    // DatabaseListener function, if the tasks been modified, events in viewModel will reload.
+    func taskListChange(change: DatabaseChange, tasks: [Task]) {
+        viewModel.events = viewModel.eventGenerater(taskList: tasks)
+        calendarWeekView.forceReload(reloadEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events))
     }
 }
 
@@ -92,35 +93,26 @@ extension TimetableViewController: JZBaseViewDelegate {
 extension TimetableViewController: JZLongPressViewDelegate, JZLongPressViewDataSource {
     
     func weekView(_ weekView: JZLongPressWeekView, didEndAddNewLongPressAt startDate: Date) {
+        // Long press to add new task
         let _ = databaseController!.addTask(newTaskTitle: "newTask", newTaskDescription: "Null", newTaskDueDate: startDate.add(component: .hour, value: weekView.addNewDurationMins/60), newTaskStartDate: startDate, newTaskAddress: "Null", newTaskRepeat: false, newTaskHasBeenCompleted: false)
         weekView.forceReload(reloadEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events))
     }
     
     func weekView(_ weekView: JZLongPressWeekView, editingEvent: JZBaseEvent, didEndMoveLongPressAt startDate: Date) {
+        // Long press a cell, set it to a new time zone.
         let event = editingEvent as! AllDayEvent
         let duration = Calendar.current.dateComponents([.minute], from: event.startDate, to: event.endDate).minute!
-        // let selectedIndex = viewModel.events.index(where: { $0.id == event.id })!
-        // let currentTask = viewModel.tasks[selectedIndex]
         let currentTask = event.task!
-        //viewModel.events[selectedIndex].startDate = startDate
-        //viewModel.events[selectedIndex].endDate = startDate.add(component: .minute, value: duration)
         databaseController!.setTaskDate(settingTask: currentTask, newTaskDueDate: startDate.add(component: .minute, value: duration), newTaskStartDate: startDate)
         viewModel.eventsByDate = JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events)
         weekView.forceReload(reloadEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events))
     }
     
+    // From JZiOSFramework
+    // Have not been used, but save for future usage here.
     func weekView(_ weekView: JZLongPressWeekView, viewForAddNewLongPressAt startDate: Date) -> UIView {
         let view = UINib(nibName: EventCell.className, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! EventCell
         view.titleLabel.text = "New Event"
         return view
     }
 }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */

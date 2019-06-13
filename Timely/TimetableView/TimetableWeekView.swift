@@ -48,9 +48,10 @@ class TimetableWeekView: JZLongPressWeekView {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // If the event cell been clicked, open the corespond task detail page.
         let selectedEvent = getCurrentEvent(with: indexPath) as! AllDayEvent
-        // ToastUtil.toastMessageInTheMiddle(message: selectedEvent.title)
-        //let taskDetailVC = TaskDetailViewController()
+//         ToastUtil.toastMessageInTheMiddle(message: selectedEvent.title)
+//        let taskDetailVC = TaskDetailViewController()
         let taskDetailVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "TaskDetailViewController") as! TaskDetailViewController
         taskDetailVC.task = selectedEvent.task!
         viewController!.navigationController?.pushViewController(taskDetailVC, animated: true)
@@ -59,6 +60,7 @@ class TimetableWeekView: JZLongPressWeekView {
 }
 
 // From JZiOSFramework
+// Have not been used, but save for future usage here.
 open class ToastUtil {
     
     static private let defaultLabelSidesPadding: CGFloat = 20

@@ -12,13 +12,12 @@ class TaskDetailViewController: UIViewController {
     
     var task: Task?
     
-    // connect it to the database
+    // Connect it to the database
     weak var databaseController: DatabaseProtocol?
 
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
-    // @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var taskStateLabel: UILabel!
     @IBOutlet weak var taskRepeatLabel: UILabel!
@@ -32,8 +31,8 @@ class TaskDetailViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         if task != nil {
             navigationItem.title = task!.taskTitle
+            // Set the labels' text
             taskLabel.text = "\(task!.taskTitle!)"
-            //addressLabel.text = "Task Address: \(task!.taskAddress!)"
             descriptionLabel.text = "\(task!.taskDescription!)"
             let taskDate = dateFormatter.string(from: task!.taskDueDate! as Date)
             dueDateLabel.text = "\(taskDate)"
@@ -53,9 +52,12 @@ class TaskDetailViewController: UIViewController {
             }
             mapButton.setTitle(task!.taskAddress, for: .normal)
             
+            // Set the wallpage if UserDefaults(forKey: "backgroundPicture") is not nil.
             let back = UserDefaults.init(suiteName: "group.Cipher.Timely")?.value(forKey: "backgroundPicture")
             if back != nil{
                 self.backgroundImage.image = UIImage(data: back as! Data)?.alpha(0.3)
+                let mainImageView = UIImageView(image:self.backgroundImage.image)
+                mainImageView.contentMode = .scaleAspectFit
             }
         }
     }
@@ -66,22 +68,12 @@ class TaskDetailViewController: UIViewController {
             let destination = segue.destination as! AddTaskViewController
             destination.task = task
         }
+        // Send the address to map controller
         if segue.identifier == "mapSegue" {
             let destination = segue.destination as! TaskMapViewController
             destination.taskAddress = task!.taskAddress!
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension UIImage {

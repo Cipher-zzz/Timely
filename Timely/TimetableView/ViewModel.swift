@@ -5,6 +5,7 @@
 //  Created by 张泽正 on 2019/5/17.
 //  Copyright © 2019 monash. All rights reserved.
 //
+// This Class store the events data.
 
 import Foundation
 
@@ -28,6 +29,8 @@ class ViewModel: NSObject{
     }
 }
 
+// From JZiOSFramework
+// Have not been used, but save for future usage here.
 enum ViewType: String {
     case defaultView = "Default JZBaseWeekView"
     case customView = "Custom JZBaseWeekView"

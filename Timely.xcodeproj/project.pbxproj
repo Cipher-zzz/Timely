@@ -268,13 +268,13 @@
 		DEE5746B228E6E5F00424117 /* TimetableView */ = {
 			isa = PBXGroup;
 			children = (
-				DEE57477228F975B00424117 /* EventCell.xib */,
 				DE992298227D583F000760EF /* TimetableViewController.swift */,
 				DEE5746C228E6EA300424117 /* ViewModel.swift */,
 				DEE5746E228E6EF800424117 /* AllDayEvent.swift */,
 				DEE57470228F867800424117 /* TimetableWeekView.swift */,
 				DEE57472228F86F300424117 /* EventCell.swift */,
 				DEE57475228F94BA00424117 /* Extensions.swift */,
+				DEE57477228F975B00424117 /* EventCell.xib */,
 			);
 			path = TimetableView;
 			sourceTree = "<group>";

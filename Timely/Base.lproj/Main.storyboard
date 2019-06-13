@@ -1011,10 +1011,10 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ys-Dp-mEg">
-                                <rect key="frame" x="8" y="447" width="76" height="30"/>
-                                <state key="normal" title="Take Photo"/>
+                                <rect key="frame" x="8" y="447" width="74" height="30"/>
+                                <state key="normal" title="Pick Photo"/>
                                 <connections>
-                                    <action selector="takePhoto:" destination="H70-01-Ux9" eventType="touchUpInside" id="jYR-Gt-KdX"/>
+                                    <action selector="pickPhoto:" destination="H70-01-Ux9" eventType="touchUpInside" id="jYR-Gt-KdX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6o-7m-RNe">
@@ -1037,6 +1037,13 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dyK-9F-qKp"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Wallpaper" id="icw-nS-KIo">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="KyO-fZ-jSZ">
+                            <connections>
+                                <action selector="reset:" destination="H70-01-Ux9" id="2Jv-oi-su2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="c5U-fq-cvo" id="ny3-QR-SHj"/>
                     </connections>
