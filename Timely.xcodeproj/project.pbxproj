@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14531B01FE1AB76975906523 /* Pods_Timely.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C450FBCB1EF76CC59ACD93D /* Pods_Timely.framework */; };
+		DE0A252422B324FA00BC8920 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DE0A252322B324FA00BC8920 /* README.md */; };
 		DE1272072261F5A50010B7AB /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1272062261F5A50010B7AB /* TaskListTableViewController.swift */; };
 		DE1272092261F6510010B7AB /* CompletedTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1272082261F6510010B7AB /* CompletedTaskTableViewController.swift */; };
 		DE12720B2261F6DA0010B7AB /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12720A2261F6DA0010B7AB /* AddTaskViewController.swift */; };
@@ -80,6 +81,7 @@
 		1E7FD4FB5AFA42D1705ADB02 /* Pods-Timely.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timely.debug.xcconfig"; path = "Target Support Files/Pods-Timely/Pods-Timely.debug.xcconfig"; sourceTree = "<group>"; };
 		3C450FBCB1EF76CC59ACD93D /* Pods_Timely.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Timely.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B8B39002A1E5731912A1E2 /* Pods-Timely.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timely.release.xcconfig"; path = "Target Support Files/Pods-Timely/Pods-Timely.release.xcconfig"; sourceTree = "<group>"; };
+		DE0A252322B324FA00BC8920 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE1272062261F5A50010B7AB /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		DE1272082261F6510010B7AB /* CompletedTaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTaskTableViewController.swift; sourceTree = "<group>"; };
 		DE12720A2261F6DA0010B7AB /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		DE2FAFC52240C5E6002C6A05 = {
 			isa = PBXGroup;
 			children = (
+				DE0A252322B324FA00BC8920 /* README.md */,
 				DE2FAFD02240C5E6002C6A05 /* Timely */,
 				DE70B68522B2481E00DB50C5 /* TimelyWidget */,
 				DE2FAFCF2240C5E6002C6A05 /* Products */,
@@ -385,6 +388,7 @@
 				DE2FAFD72240C5E6002C6A05 /* Main.storyboard in Resources */,
 				DE1C4AF8229A9DFA00FC7439 /* play-circle.png in Resources */,
 				DE1C4AFB229A9DFA00FC7439 /* stop.png in Resources */,
+				DE0A252422B324FA00BC8920 /* README.md in Resources */,
 				DE1C4AF6229A9DFA00FC7439 /* check-square.png in Resources */,
 				DE1C4AF7229A9DFA00FC7439 /* message.png in Resources */,
 			);
