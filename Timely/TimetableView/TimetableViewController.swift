@@ -83,6 +83,7 @@ class TimetableViewController: UIViewController, DatabaseListener {
     }
 }
 
+// Using extension structure to make it clear that, which functions belong to which delegates
 extension TimetableViewController: JZBaseViewDelegate {
     func initDateDidChange(_ weekView: JZBaseWeekView, initDate: Date) {
         //updateNaviBarTitle()

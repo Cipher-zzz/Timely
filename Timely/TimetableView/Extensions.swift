@@ -8,6 +8,9 @@
 import UIKit
 import JZCalendarWeekView
 
+
+// All the extensions here are extension to the Swift build-in functions,
+
 extension Date {
     
     func add(component: Calendar.Component, value: Int) -> Date {
