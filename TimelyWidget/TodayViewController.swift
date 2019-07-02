@@ -16,7 +16,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let sharedDefaults = UserDefaults.init(suiteName: "group.Cipher.Timely")
-        widgetLabel.text = "\(sharedDefaults?.value(forKey: "taskTitle") ?? "Please open Timely")"
+        widgetLabel.text = "\(sharedDefaults?.value(forKey: "taskTitle") ?? "Please open Timely task list")"
         
         // Set the color of cell
         if widgetLabel.text!.contains("LABORATORY") || widgetLabel.text!.contains("WORKSHOP"){
