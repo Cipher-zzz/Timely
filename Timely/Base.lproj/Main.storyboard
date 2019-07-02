@@ -37,11 +37,18 @@
                         <viewLayoutGuide key="safeArea" id="0e1-IA-E9N"/>
                     </view>
                     <navigationItem key="navigationItem" title="Allocate +" id="mWJ-y3-Wg4">
-                        <barButtonItem key="rightBarButtonItem" title="Sync" id="TAx-PM-Z5N">
-                            <connections>
-                                <action selector="syncButton:" destination="0Lg-pq-w11" id="cGX-b0-Hsr"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Sync" id="TAx-PM-Z5N">
+                                <connections>
+                                    <action selector="syncButton:" destination="0Lg-pq-w11" id="cGX-b0-Hsr"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="XcZ-GA-oQn">
+                                <connections>
+                                    <action selector="refreshButton:" destination="0Lg-pq-w11" id="kGf-70-0Z2"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="webView" destination="z8Q-7F-jUh" id="dyq-VP-Iv6"/>

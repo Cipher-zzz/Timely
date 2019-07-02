@@ -38,9 +38,14 @@ class WebViewController: UIViewController, WKUIDelegate {
         let myURL = URL(string:"https://my-timetable.monash.edu/odd/student")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
-        displayMessage(title: "Instruction", message: "Please login in your monash account first, after you see the allocate+ page, click sync button", pop: false)
+        displayMessage(title: "Instruction", message: "Please login in your monash account first, after you see the allocate+ page, click sync button. If it gets stuck, please click refresh button and then sync.", pop: false)
     }
     
+    @IBAction func refreshButton(_ sender: Any) {
+        let myURL = URL(string:"https://my-timetable.monash.edu/odd/student")
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
+    }
     @IBAction func syncButton(_ sender: Any) {
         webView.evaluateJavaScript("JSON.stringify(data.student)"){(data,error) in
             if let data = data as? String {
