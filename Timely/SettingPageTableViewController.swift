@@ -15,6 +15,18 @@ class SettingPageTableViewController: UITableViewController {
     
     @IBOutlet weak var numOfDaysTextField: UITextField!
     
+    @IBOutlet weak var scrollTypeControl: UISegmentedControl!
+    
+    @IBAction func scrollTypeChanged(_ sender: Any) {
+        if scrollTypeControl.selectedSegmentIndex == 0{
+            viewController?.calendarWeekView.scrollType = .pageScroll
+        }
+        else{
+            viewController?.calendarWeekView.scrollType = .sectionScroll
+        }
+        viewController?.calendarWeekView.refreshWeekView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         numOfDaysTextField.text = String(viewController!.calendarWeekView.numOfDays)
@@ -24,6 +36,14 @@ class SettingPageTableViewController: UITableViewController {
         picker?.dataSource = self
         
         numOfDaysTextField.inputView = picker
+        
+        //scrollTypeControl
+        if viewController?.calendarWeekView.scrollType == .pageScroll{
+            scrollTypeControl.selectedSegmentIndex = 0
+        }
+        else{
+            scrollTypeControl.selectedSegmentIndex = 1
+        }
         
         // ToolBar
         let toolBar = UIToolbar()
@@ -46,7 +66,12 @@ class SettingPageTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        if section == 0{
+            return 5
+        }
+        else{
+            return 3
+        }
     }
     
     @objc func doneClick() {

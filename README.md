@@ -23,3 +23,10 @@ Following the work from [JZCalendarWeekView](https://github.com/zjfjack/JZCalend
 All the files in "TimetableView" group, using or changed from JZCalendarWeekViewExample, which provided by origin author.
 [License of JZCalendarWeekView](https://github.com/zjfjack/JZCalendarWeekView/blob/master/LICENSE)
 Other external resources have used (YouTube tutorials, StackOverflow solutions) have been cited within the code.
+
+
+## To be implemented
+scroll type selection
+clean all courses tasks
+location
+gather courses

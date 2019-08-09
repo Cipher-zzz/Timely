@@ -289,34 +289,98 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                             <segue destination="H70-01-Ux9" kind="show" id="ldA-lX-TUl"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="v7A-fy-1Jd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="v7A-fy-1Jd">
                                         <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v7A-fy-1Jd" id="eav-V6-VZF">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read me !!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZk-hH-m5A">
+                                                    <rect key="frame" x="32" y="11" width="86.5" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gZk-hH-m5A" secondAttribute="bottom" id="4vq-DG-bPz"/>
+                                                <constraint firstItem="gZk-hH-m5A" firstAttribute="top" secondItem="eav-V6-VZF" secondAttribute="topMargin" id="5h2-Rv-yWi"/>
+                                                <constraint firstItem="gZk-hH-m5A" firstAttribute="leading" secondItem="eav-V6-VZF" secondAttribute="leadingMargin" constant="16" id="dbQ-Fh-XSR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Kyv-s5-1TU">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kyv-s5-1TU" id="cUd-NA-uuz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZu-Bh-4Vw">
-                                                    <rect key="frame" x="16" y="2" width="148" height="39.5"/>
-                                                    <state key="normal" title="Link Monash Account"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfW-7O-att">
+                                                    <rect key="frame" x="32" y="11" width="85" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4SN-wd-rsG">
+                                                    <rect key="frame" x="133" y="8" width="226" height="28.5"/>
+                                                    <segments>
+                                                        <segment title="Page"/>
+                                                        <segment title="Section"/>
+                                                    </segments>
                                                     <connections>
-                                                        <segue destination="0Lg-pq-w11" kind="show" id="bgT-Uj-7Bc"/>
+                                                        <action selector="scrollTypeChanged:" destination="psE-3v-Sq6" eventType="valueChanged" id="eaE-f2-mol"/>
                                                     </connections>
-                                                </button>
+                                                </segmentedControl>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="bZu-Bh-4Vw" secondAttribute="bottom" constant="2" id="LIw-x5-pCd"/>
-                                                <constraint firstItem="bZu-Bh-4Vw" firstAttribute="leading" secondItem="eav-V6-VZF" secondAttribute="leading" constant="16" id="cot-Ph-fvs"/>
-                                                <constraint firstItem="bZu-Bh-4Vw" firstAttribute="top" secondItem="eav-V6-VZF" secondAttribute="top" constant="2" id="nmI-PS-Kir"/>
+                                                <constraint firstAttribute="trailing" secondItem="4SN-wd-rsG" secondAttribute="trailing" constant="16" id="Ep4-Yu-akN"/>
+                                                <constraint firstAttribute="bottom" secondItem="4SN-wd-rsG" secondAttribute="bottom" constant="8" id="N39-dB-ti1"/>
+                                                <constraint firstItem="4SN-wd-rsG" firstAttribute="leading" secondItem="sfW-7O-att" secondAttribute="trailing" constant="16" id="Yhq-Nr-Yyc"/>
+                                                <constraint firstItem="sfW-7O-att" firstAttribute="leading" secondItem="cUd-NA-uuz" secondAttribute="leadingMargin" constant="16" id="bko-9d-6EA"/>
+                                                <constraint firstItem="4SN-wd-rsG" firstAttribute="top" secondItem="cUd-NA-uuz" secondAttribute="top" constant="8" id="meb-2L-mAv"/>
+                                                <constraint firstItem="sfW-7O-att" firstAttribute="bottom" secondItem="cUd-NA-uuz" secondAttribute="bottomMargin" id="oqx-DJ-Ind"/>
+                                                <constraint firstItem="sfW-7O-att" firstAttribute="top" secondItem="cUd-NA-uuz" secondAttribute="topMargin" id="z1Z-E0-EtR"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="zmn-1W-46J">
+                                        <rect key="frame" x="0.0" y="204" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zmn-1W-46J" id="uIb-68-nEO">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4z-70-n4J">
+                                                    <rect key="frame" x="16" y="2" width="30" height="39.5"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Monash Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cT-K6-6Hu">
+                                                    <rect key="frame" x="32" y="11" width="165" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2cT-K6-6Hu" firstAttribute="leading" secondItem="uIb-68-nEO" secondAttribute="leadingMargin" constant="16" id="3La-wK-Wxt"/>
+                                                <constraint firstItem="W4z-70-n4J" firstAttribute="top" secondItem="uIb-68-nEO" secondAttribute="top" constant="2" id="7Yt-Vr-2F3"/>
+                                                <constraint firstItem="2cT-K6-6Hu" firstAttribute="bottom" secondItem="uIb-68-nEO" secondAttribute="bottomMargin" id="BBv-ZG-be9"/>
+                                                <constraint firstItem="2cT-K6-6Hu" firstAttribute="top" secondItem="uIb-68-nEO" secondAttribute="topMargin" id="Xeb-PI-loL"/>
+                                                <constraint firstItem="W4z-70-n4J" firstAttribute="leading" secondItem="uIb-68-nEO" secondAttribute="leading" constant="16" id="k8B-fH-gY4"/>
+                                                <constraint firstAttribute="bottom" secondItem="W4z-70-n4J" secondAttribute="bottom" constant="2" id="rNP-jl-8sl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="0Lg-pq-w11" kind="show" id="xN8-7b-gue"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="About" id="2ch-5i-2MM">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="fN2-wh-zlW">
-                                        <rect key="frame" x="0.0" y="188" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="276" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fN2-wh-zlW" id="ind-S5-cnE">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -340,7 +404,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="OHH-jK-HYg">
-                                        <rect key="frame" x="0.0" y="232" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="320" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OHH-jK-HYg" id="GDL-vk-FkY">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -364,7 +428,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="eya-eC-bKb">
-                                        <rect key="frame" x="0.0" y="276" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="364" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eya-eC-bKb" id="bgA-dt-Ngl">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -397,11 +461,12 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                     </tableView>
                     <connections>
                         <outlet property="numOfDaysTextField" destination="zf5-6Z-t8J" id="ceA-d3-RPG"/>
+                        <outlet property="scrollTypeControl" destination="4SN-wd-rsG" id="VAd-qu-h1N"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qey-SF-AJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18" y="-492"/>
+            <point key="canvasLocation" x="-18.399999999999999" y="-492.50374812593708"/>
         </scene>
         <!--New Task-->
         <scene sceneID="tne-QT-ifu">
@@ -1072,6 +1137,6 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="o3D-Ue-P84"/>
-        <segue reference="2kd-Mz-zxZ"/>
+        <segue reference="MeL-Ne-4Br"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -43,7 +43,7 @@ class TimetableViewController: UIViewController, DatabaseListener {
             calendarWeekView.setupCalendar(numOfDays: 7,
                                            setDate: Date(),
                                            allEvents: viewModel.eventsByDate,
-                                           scrollType: .sectionScroll,
+                                           scrollType: .pageScroll,
                                            scrollableRange: (nil, nil))
         }
         
