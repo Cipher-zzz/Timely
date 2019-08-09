@@ -69,7 +69,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Q6-4X-r4b">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fBd-7x-0gX">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fBd-7x-0gX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">  Timely uses embeded web to login in Monash Allocate plus. That's to say, the App will never get your account number or password. Actually, it even not run the account details inside the program. Timely only gets your timetable information and avoid your id deliberately. All the details store at core data in your device and never uploaded to any online server.</string>
@@ -113,7 +113,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cw5-pk-qdu">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EZf-3H-O2d">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EZf-3H-O2d">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">JZCalendarWeekView
@@ -179,7 +179,7 @@ SOFTWARE.</string>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J5a-7H-DHq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mXc-Hl-FEa">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mXc-Hl-FEa">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Sincere thanks my tutor Josh Olsen, 
@@ -296,8 +296,8 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read me !!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZk-hH-m5A">
-                                                    <rect key="frame" x="32" y="11" width="86.5" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Tutorial (Read me !!!)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZk-hH-m5A">
+                                                    <rect key="frame" x="32" y="11" width="195" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -309,6 +309,9 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                                                 <constraint firstItem="gZk-hH-m5A" firstAttribute="leading" secondItem="eav-V6-VZF" secondAttribute="leadingMargin" constant="16" id="dbQ-Fh-XSR"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="L08-Ne-vdH" kind="show" id="EQO-0f-UzV"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Kyv-s5-1TU">
                                         <rect key="frame" x="0.0" y="160" width="375" height="44"/>
@@ -695,7 +698,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
             </objects>
             <point key="canvasLocation" x="-18.399999999999999" y="-1336.2818590704649"/>
         </scene>
-        <!--Own Task-->
+        <!--Own Tasks-->
         <scene sceneID="Z7c-iE-85L">
             <objects>
                 <tableViewController id="SIg-Ib-OC3" customClass="TaskListTableViewController" customModule="Timely" customModuleProvider="target" sceneMemberID="viewController">
@@ -753,7 +756,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                             <outlet property="delegate" destination="SIg-Ib-OC3" id="YMf-DN-8kU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Own Task" id="6Zk-tw-dZp">
+                    <navigationItem key="navigationItem" title="Own Tasks" id="6Zk-tw-dZp">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="5Ys-aX-1vr">
                                 <connections>
@@ -775,7 +778,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
         <!--Completed Task-->
         <scene sceneID="nyL-gF-x2b">
             <objects>
-                <tableViewController title="Completed Task" id="ORr-YP-4HT" customClass="CompletedTaskListTableViewController" customModule="Timely" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Completed Task" id="ORr-YP-4HT" customClass="RepeatedTaskListTableViewController" customModule="Timely" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="IEs-ud-VLc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1067,6 +1070,36 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZ5-fJ-7Ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-726" y="-1336"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WHG-57-dCA">
+            <objects>
+                <viewController id="L08-Ne-vdH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="brZ-gI-VeU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j9P-fe-Xss">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">IMPORTANT!!  For the users come from ver 1.0, I highly recommand you delect this App and reinstall this new version again to have the best experience. That may delete all the tasks file, you have to sync again.  Here is the app tutorial  SYNC COURSES!! Setting-&gt;Link Monash Account-&gt;sign in-&gt;after you see allocate + page, Click sync button-&gt;ALL DONE If you cannot see the web page, click refesh button.  Ver 1.1 Now, If you sync your courses again, all the courses before will be replaced.  Courses and your own tasks now have been set into two list.  Try to long press the task item, they can move anywhere.  Try to long press the empty space, you can add assign a new task there.  FINALLY Hope you can write a review in the App Store.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="j9P-fe-Xss" secondAttribute="trailing" id="5ny-E7-RAA"/>
+                            <constraint firstItem="j9P-fe-Xss" firstAttribute="top" secondItem="9ij-AP-Ypv" secondAttribute="top" id="BkH-Ly-3gg"/>
+                            <constraint firstItem="j9P-fe-Xss" firstAttribute="leading" secondItem="brZ-gI-VeU" secondAttribute="leading" id="JYB-KW-AFD"/>
+                            <constraint firstItem="j9P-fe-Xss" firstAttribute="bottom" secondItem="9ij-AP-Ypv" secondAttribute="bottom" id="ebM-Fl-Nfw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9ij-AP-Ypv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bL-9a-nhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727.20000000000005" y="426.83658170914543"/>
         </scene>
         <!--Camera-->
         <scene sceneID="9cR-D3-DnD">

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CompletedTaskListTableViewController: UITableViewController,DatabaseListener,UISearchResultsUpdating {
+class RepeatedTaskListTableViewController: UITableViewController,DatabaseListener,UISearchResultsUpdating {
     
     // Refer tothe two different sections in our Table View
     let SECTION_LIST = 0;
@@ -103,7 +103,7 @@ class CompletedTaskListTableViewController: UITableViewController,DatabaseListen
             countCell!.textLabel?.text = "1 task in List"
         }
         else if currentList.count == 0{
-            countCell!.textLabel?.text = "No task in this list now, please create a new one!"
+            countCell!.textLabel?.text = "No course in this list now, please add your courses in setting page!"
         }
         else{
             countCell!.textLabel?.text = "\(currentList.count) tasks in List"
