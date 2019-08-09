@@ -54,6 +54,9 @@ class WebViewController: UIViewController, WKUIDelegate {
                     let volumeData = try decoder.decode(VolumeData.self, from: data.data(using: .utf8)!)
                     self.user_inf = volumeData.units!
                     
+                    // Delete pervious courses
+                    self.databaseController?.deleteRepeatTasks()
+                    
                     for item in self.user_inf{
                         let dateFormatter = DateFormatter()
                         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
@@ -87,7 +90,7 @@ class WebViewController: UIViewController, WKUIDelegate {
                             let index = currentWeekPattern.index(currentWeekPattern.startIndex, offsetBy: i)
                             // For each "has class week", add task.
                             if currentWeekPattern[index] == "1"{
-                                let _ = self.databaseController?.addTask(newTaskTitle: item.key, newTaskDescription: "Unit: \(item.value.subjectTitle!) Staff:  \(item.value.staff!)", newTaskDueDate: currentEndDate!, newTaskStartDate: currentStartDate!, newTaskAddress: item.value.location!, newTaskRepeat: false, newTaskHasBeenCompleted: false)
+                                let _ = self.databaseController?.addTask(newTaskTitle: item.key, newTaskDescription: "Unit: \(item.value.subjectTitle!) Staff:  \(item.value.staff!)", newTaskDueDate: currentEndDate!, newTaskStartDate: currentStartDate!, newTaskAddress: item.value.location!, newTaskRepeat: true, newTaskHasBeenCompleted: false)
                             }
                             // Then set the current dates to next week
                             currentStartDate = currentStartDate!.add(component: .day, value: 7)

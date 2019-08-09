@@ -189,7 +189,7 @@ class CompletedTaskListTableViewController: UITableViewController,DatabaseListen
         super.viewWillDisappear(animated)
         databaseController?.removeListener(listener: self)
     }
-    var listenerType = ListenerType.completedTasks
+    var listenerType = ListenerType.repeatedTasks
     
     func taskListChange(change: DatabaseChange, tasks: [Task]) {
         currentList = tasks

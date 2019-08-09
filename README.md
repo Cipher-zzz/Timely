@@ -26,7 +26,7 @@ Other external resources have used (YouTube tutorials, StackOverflow solutions) 
 
 
 ## To be implemented
-scroll type selection
-clean all courses tasks
-location
-gather courses
+1. scroll type selection (updated)
+2. clean all courses tasks when sync again (updated)
+3. location function optimize
+4. gather courses (updated)

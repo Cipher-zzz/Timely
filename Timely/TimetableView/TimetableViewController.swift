@@ -10,7 +10,7 @@ import UIKit
 import JZCalendarWeekView
 
 class TimetableViewController: UIViewController, DatabaseListener {
-    var listenerType = ListenerType.tasks
+    var listenerType = ListenerType.uncompleted
     
     @IBOutlet weak var calendarWeekView: TimetableWeekView!
     let viewModel = ViewModel()
@@ -78,6 +78,7 @@ class TimetableViewController: UIViewController, DatabaseListener {
     
     // DatabaseListener function, if the tasks been modified, events in viewModel will reload.
     func taskListChange(change: DatabaseChange, tasks: [Task]) {
+        print("changed")
         viewModel.events = viewModel.eventGenerater(taskList: tasks)
         calendarWeekView.forceReload(reloadEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: viewModel.events))
     }

@@ -16,8 +16,8 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     
     // Results
     var taskslistFetchedResultsController: NSFetchedResultsController<Task>?
+    var repeatedtaskslistFetchedResultsController: NSFetchedResultsController<Task>?
     var completedtaskslistFetchedResultsController: NSFetchedResultsController<Task>?
-    var findTaskController: NSFetchedResultsController<Task>?
     
     override init() {
         persistantContainer = NSPersistentContainer(name: "Tasks")
@@ -100,16 +100,27 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         saveContext()
     }
     
+    func deleteRepeatTasks(){
+        let deleteingTask = fetchRepeatTasks()
+        for task in deleteingTask{
+            persistantContainer.viewContext.delete(task)
+        }
+        saveContext()
+    }
     
     func addListener(listener: DatabaseListener) {
         listeners.addDelegate(listener)
         
-        if listener.listenerType == ListenerType.completedTasks || listener.listenerType == ListenerType.all {
-            listener.taskListChange(change: .update, tasks: fetchCompletedTasks())
+        if listener.listenerType == ListenerType.repeatedTasks || listener.listenerType == ListenerType.all {
+            listener.taskListChange(change: .update, tasks: fetchRepeatTasks())
         }
         
         if listener.listenerType == ListenerType.tasks || listener.listenerType == ListenerType.all {
             listener.taskListChange(change: .update, tasks: fetchTasks())
+        }
+        
+        if listener.listenerType == ListenerType.uncompleted || listener.listenerType == ListenerType.all {
+            listener.taskListChange(change: .update, tasks: fetchUncompletedTasks())
         }
     }
     
@@ -122,7 +133,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
             let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
             let nameSortDescriptor = NSSortDescriptor(key: "taskDueDate", ascending: true); fetchRequest.sortDescriptors = [nameSortDescriptor]
             
-            let predicate = NSPredicate(format: "taskHasBeenCompleted=false", "Task")
+            let predicate = NSPredicate(format: "taskRepeat=false", "Task")
             fetchRequest.predicate = predicate
             
             taskslistFetchedResultsController =
@@ -143,14 +154,37 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         return tasks
     }
     
-    func fetchCompletedTasks() -> [Task] {
-        if completedtaskslistFetchedResultsController == nil {
+    func fetchRepeatTasks() -> [Task] {
+        if repeatedtaskslistFetchedResultsController == nil {
             let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
             let nameSortDescriptor = NSSortDescriptor(key: "taskDueDate", ascending: true); fetchRequest.sortDescriptors = [nameSortDescriptor]
 
-            let predicate = NSPredicate(format: "taskHasBeenCompleted=true", "Task")
+            let predicate = NSPredicate(format: "taskRepeat=true", "Task")
             fetchRequest.predicate = predicate
 
+            repeatedtaskslistFetchedResultsController = NSFetchedResultsController<Task>(fetchRequest: fetchRequest,managedObjectContext: persistantContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+            repeatedtaskslistFetchedResultsController?.delegate = self
+            do {
+                try repeatedtaskslistFetchedResultsController?.performFetch()
+            } catch {
+                print("Fetch Request failed: \(error)")
+            }
+        }
+        var tasks = [Task]()
+        if repeatedtaskslistFetchedResultsController?.fetchedObjects != nil {
+            tasks = (repeatedtaskslistFetchedResultsController?.fetchedObjects)!
+        }
+        return tasks
+    }
+    
+    func fetchUncompletedTasks() -> [Task] {
+        if completedtaskslistFetchedResultsController == nil {
+            let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+            let nameSortDescriptor = NSSortDescriptor(key: "taskDueDate", ascending: true); fetchRequest.sortDescriptors = [nameSortDescriptor]
+            
+            let predicate = NSPredicate(format: "taskHasBeenCompleted=false", "Task")
+            fetchRequest.predicate = predicate
+            
             completedtaskslistFetchedResultsController = NSFetchedResultsController<Task>(fetchRequest: fetchRequest,managedObjectContext: persistantContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
             completedtaskslistFetchedResultsController?.delegate = self
             do {
@@ -175,9 +209,15 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
             }
             }
         }
+        else if controller == repeatedtaskslistFetchedResultsController { listeners.invoke { (listener) in
+            if listener.listenerType == ListenerType.repeatedTasks {
+                listener.taskListChange(change: .update, tasks:fetchRepeatTasks())
+            }
+            }
+        }
         else if controller == completedtaskslistFetchedResultsController { listeners.invoke { (listener) in
-            if listener.listenerType == ListenerType.completedTasks || listener.listenerType == ListenerType.all {
-                listener.taskListChange(change: .update, tasks:fetchCompletedTasks())
+            if listener.listenerType == ListenerType.uncompleted {
+                listener.taskListChange(change: .update, tasks:fetchUncompletedTasks())
             }
             }
         }

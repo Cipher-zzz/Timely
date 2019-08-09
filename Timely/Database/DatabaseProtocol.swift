@@ -14,8 +14,9 @@ enum DatabaseChange {
     case update
 }
 enum ListenerType {
-    case completedTasks
+    case repeatedTasks
     case tasks
+    case uncompleted
     case all
 }
 
@@ -29,6 +30,8 @@ protocol DatabaseProtocol: AnyObject {
     func addTask(newTaskTitle: String, newTaskDescription: String, newTaskDueDate: Date, newTaskStartDate: Date, newTaskAddress: String, newTaskRepeat: Bool, newTaskHasBeenCompleted: Bool) -> Task
 
     func deleteTask(task: Task)
+    
+    func deleteRepeatTasks()
     
     func addListener(listener: DatabaseListener)
     

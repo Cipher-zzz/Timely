@@ -695,7 +695,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
             </objects>
             <point key="canvasLocation" x="-18.399999999999999" y="-1336.2818590704649"/>
         </scene>
-        <!--Task List-->
+        <!--Own Task-->
         <scene sceneID="Z7c-iE-85L">
             <objects>
                 <tableViewController id="SIg-Ib-OC3" customClass="TaskListTableViewController" customModule="Timely" customModuleProvider="target" sceneMemberID="viewController">
@@ -753,14 +753,14 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                             <outlet property="delegate" destination="SIg-Ib-OC3" id="YMf-DN-8kU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Task List" id="6Zk-tw-dZp">
+                    <navigationItem key="navigationItem" title="Own Task" id="6Zk-tw-dZp">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="5Ys-aX-1vr">
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="addTaskSegue" id="MeL-Ne-4Br"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="bookmarks" id="YXc-t5-7qn">
+                            <barButtonItem title="Courses" id="YXc-t5-7qn">
                                 <connections>
                                     <segue destination="ORr-YP-4HT" kind="show" identifier="completedTaskSegue" id="BBD-lt-HMg"/>
                                 </connections>
@@ -830,7 +830,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                             <outlet property="delegate" destination="ORr-YP-4HT" id="IGY-1U-Klg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Completed Task" id="FJc-l2-fcs"/>
+                    <navigationItem key="navigationItem" title="Courses" id="FJc-l2-fcs"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctE-KD-sMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
