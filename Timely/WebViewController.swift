@@ -35,7 +35,14 @@ class WebViewController: UIViewController, WKUIDelegate {
         
         // Open allocate plus website
         // let myURL = URL(string:"https://my-timetable.monash.edu/odd/student?ss=503350ab070d40fea4fe311f690e7e39")
-        let myURL = URL(string:"https://my-timetable.monash.edu/odd/student")
+        let myURLOdd = URL(string:"https://my-timetable.monash.edu/odd/student")
+        let myURLEven = URL(string:"https://my-timetable.monash.edu/even/student")
+        
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy"
+        let formattedDate = Int(format.string(from: date)) ?? 0
+        let myURL = formattedDate%2 == 1 ? myURLOdd:myURLEven
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
         displayMessage(title: "Instruction", message: "Please login in your monash account first, after you see the allocate+ page, click sync button. If it gets stuck, please click refresh button and then sync.", pop: false)

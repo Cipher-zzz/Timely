@@ -58,15 +58,16 @@ class EventCell: JZLongPressEventCell {
         }
         
         // Set the color of cell
-        if event.title.contains("LABORATORY") || event.title.contains("WORKSHOP"){
+        let currentTitle = event.title.lowercased()
+        if currentTitle.contains("laboratory") || currentTitle.contains("workshop") || currentTitle.contains("applied_class"){
             self.borderView.backgroundColor = UIColor(hex: 0xDAA520)    //  Side color
             self.contentView.backgroundColor = UIColor(hex: 0xFFD700)   // Contain color
         }
-        else if event.title.contains("LECTURE") || event.title.contains("SEMINAR"){
+        else if currentTitle.contains("lecture") || currentTitle.contains("seminar"){
             self.borderView.backgroundColor = UIColor(hex: 0x0899FF)    //  Side color
             self.contentView.backgroundColor = UIColor(hex: 0xEEF7FF)   // Contain color
         }
-        else if event.title.contains("TUTORIAL"){
+        else if currentTitle.contains("tutorial"){
             self.borderView.backgroundColor = UIColor(hex: 0x00FF00)    //  Side color
             self.contentView.backgroundColor = UIColor(hex: 0x00FF7F)   // Contain color
         }
