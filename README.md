@@ -1,9 +1,9 @@
 # Timely
-Timely is a timetable management App which can access to Monash Allocate+ to sync data.
+Timely is a timetable management App which can access to Monash/Unimelb Allocate+ to sync data.
 
 ## Description
 1. Sync the timetable in allocate+. 
-After the user signs in their Monash account in the web view component,
+After the user signs in their Monash/Unimelb account in the web view component,
 their timetable information will store into the app storage and display in the timetable page automatically.
 Lectures will show in blue, labs in yellow, tuturials in green and self added tasks show in pink.
 2. Add tasks and make them show on the page as well. (Todo list)
