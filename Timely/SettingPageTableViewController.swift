@@ -67,7 +67,7 @@ class SettingPageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 0{
-            return 5
+            return 6
         }
         else{
             return 3
@@ -79,6 +79,18 @@ class SettingPageTableViewController: UITableViewController {
     }
     @objc func cancelClick() {
         numOfDaysTextField.resignFirstResponder()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Send the current task to task detail controller
+        if segue.identifier == "linkUnimelbSegue" {
+            let destination = segue.destination as! WebViewController
+            destination.uni = "Unimelb"
+        }
+        if segue.identifier == "linkMonashSegue" {
+            let destination = segue.destination as! WebViewController
+            destination.uni = "Monash"
+        }
     }
 }
 

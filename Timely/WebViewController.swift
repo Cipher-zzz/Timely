@@ -18,6 +18,7 @@ class WebViewController: UIViewController, WKUIDelegate {
     // Monash allocate plus use dictionary to store course items.
     var user_inf : [String: UnitData] = [:]
     var webView: WKWebView!
+    var uni: String?
     weak var databaseController: DatabaseProtocol?
     
     override func loadView() {
@@ -38,14 +39,30 @@ class WebViewController: UIViewController, WKUIDelegate {
         let myURLOdd = URL(string:"https://my-timetable.monash.edu/odd/student")
         let myURLEven = URL(string:"https://my-timetable.monash.edu/even/student")
         
+        let unimelbOdd = URL(string:"https://mytimetable.students.unimelb.edu.au/odd/student?")
+         let unimelbEven = URL(string:"https://mytimetable.students.unimelb.edu.au/even/student?")
+        
         let date = Date()
         let format = DateFormatter()
         format.dateFormat = "yyyy"
         let formattedDate = Int(format.string(from: date)) ?? 0
-        let myURL = formattedDate%2 == 1 ? myURLOdd:myURLEven
-        let myRequest = URLRequest(url: myURL!)
+        //let myURL = formattedDate%2 == 1 ? myURLOdd:myURLEven
+        var myURL: URL
+        if formattedDate%2 == 1, uni == "Monash" {
+            myURL = myURLOdd!
+        }
+        else if formattedDate%2 == 0, uni == "Monash" {
+            myURL = myURLEven!
+        }
+        else if formattedDate%2 == 1, uni == "Unimelb" {
+            myURL = unimelbOdd!
+        }
+        else {
+            myURL = unimelbEven!
+        }
+        let myRequest = URLRequest(url: myURL)
         webView.load(myRequest)
-        displayMessage(title: "Instruction", message: "Please login in your monash account first, after you see the allocate+ page, click sync button. If it gets stuck, please click refresh button and then sync.", pop: false)
+        displayMessage(title: "Instruction", message: "Please login in your account first, after you see the allocate+ page, click sync button. If it gets stuck, please click refresh button and then sync.", pop: false)
     }
     
     @IBAction func refreshButton(_ sender: Any) {
