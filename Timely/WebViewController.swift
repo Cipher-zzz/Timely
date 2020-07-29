@@ -49,9 +49,7 @@ class WebViewController: UIViewController, WKUIDelegate {
     }
     
     @IBAction func refreshButton(_ sender: Any) {
-        let myURL = URL(string:"https://my-timetable.monash.edu/odd/student")
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)
+        viewDidLoad()
     }
     @IBAction func syncButton(_ sender: Any) {
         webView.evaluateJavaScript("JSON.stringify(data.student)"){(data,error) in

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6df-XS-Ubx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6df-XS-Ubx">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -226,7 +226,6 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SBu-iM-lss">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
                             <tableViewSection headerTitle="Settings" id="ghG-PL-hrv">
                                 <cells>
@@ -1074,7 +1073,7 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j9P-fe-Xss">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">IMPORTANT!!  For the users come from ver 1.0, I highly recommand you delete this App and reinstall this new version again to have the best experience. That may delete all the tasks file, you have to sync again.  Here is the app tutorial  SYNC COURSES!! Setting-&gt;Link Monash Account-&gt;sign in-&gt;after you see allocate + page, Click sync button-&gt;ALL DONE If you cannot see the web page, click refesh button.  Ver 1.1 Now, If you sync your courses again, all the courses before will be replaced.  Courses and your own tasks now have been set into two list.  Try to long press the task item, they can move anywhere.  Try to long press the empty space, you can add assign a new task there.  FINALLY Hope you can write a review in the App Store.</mutableString>
+                                <string key="text">IMPORTANT!!  For the users come from ver 1.0, I highly recommand you delete this App and reinstall this new version again to have the best experience. That may delete all the tasks file, you have to sync again.  Here is the app tutorial  SYNC COURSES!! Setting-&gt;Link Monash Account-&gt;sign in-&gt;after you see allocate + page, Click sync button-&gt;ALL DONE If you cannot see the web page, click refesh button.  Ver 1.1 Now, If you sync your courses again, all the courses before will be replaced.  Courses and your own tasks now have been set into two list.  Try to long press the task item, they can move anywhere.  Try to long press the empty space, you can add assign a new task there.  FINALLY Hope you can write a review in the App Store.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1150,6 +1149,10 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
             <point key="canvasLocation" x="-18" y="427"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="o3D-Ue-P84"/>
+        <segue reference="MeL-Ne-4Br"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="check-square.png" width="200" height="200"/>
         <image name="code.png" width="200" height="200"/>
@@ -1160,8 +1163,4 @@ To upload Apps to AppStore, developers have to pay us$ 99/y to enrol the Apple D
         <image name="rollback.png" width="200" height="200"/>
         <image name="stop.png" width="200" height="200"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="o3D-Ue-P84"/>
-        <segue reference="2kd-Mz-zxZ"/>
-    </inferredMetricsTieBreakers>
 </document>
